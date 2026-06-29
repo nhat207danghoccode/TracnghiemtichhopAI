@@ -579,6 +579,369 @@ window.onload=function(){
 
 </script>
 
+
+<style>
+
+.ai-float{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    overflow:hidden;
+    z-index:99999;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(37,99,235,.7);
+    animation:floatAI 2s infinite ease-in-out;
+    border:3px solid rgba(255,255,255,.25);
+}
+
+.ai-float img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes floatAI{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+.ai-chat{
+    position:fixed;
+    right:18px;
+    bottom:95px;
+    width:340px;
+    height:520px;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(15px);
+    border-radius:24px;
+    overflow:hidden;
+    display:none;
+    flex-direction:column;
+    z-index:99999;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 0 40px rgba(0,0,0,.45);
+}
+
+.ai-header{
+    height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 16px;
+    background:rgba(255,255,255,.05);
+    color:white;
+}
+
+.ai-header-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.ai-header img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.ai-close{
+    font-size:24px;
+    cursor:pointer;
+}
+
+.ai-messages{
+    flex:1;
+    overflow-y:auto;
+    padding:15px;
+}
+
+.ai-message{
+    max-width:85%;
+    padding:12px 14px;
+    border-radius:16px;
+    color:white;
+    margin-bottom:12px;
+    line-height:1.5;
+    white-space:pre-wrap;
+}
+
+.ai-user{
+    margin-left:auto;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+}
+
+.ai-bot{
+    background:rgba(255,255,255,.08);
+}
+
+.ai-input-box{
+    padding:12px;
+    display:flex;
+    gap:10px;
+    background:rgba(255,255,255,.04);
+}
+
+.ai-input{
+    flex:1;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    padding:12px;
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+.ai-send{
+    width:50px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+</style>
+
+<div class="ai-float"
+onclick="toggleAI()">
+
+<img src="suy.JPG">
+
+</div>
+
+<div class="ai-chat"
+id="aiChat">
+
+<div class="ai-header">
+
+<div class="ai-header-left">
+
+<img src="suy.JPG">
+
+<div>
+
+<h3>AI Trợ Lý</h3>
+
+<p style="font-size:12px;opacity:.7;">
+Powered by Nhat2007
+</p>
+
+</div>
+
+</div>
+
+<div class="ai-close"
+onclick="toggleAI()">
+×
+</div>
+
+</div>
+
+<div class="ai-messages"
+id="aiMessages">
+
+<div class="ai-message ai-bot">
+Xin chào 👋<br>
+Tôi có thể hỗ trợ giải bài hoặc trò chuyện.
+</div>
+
+</div>
+
+<div class="ai-input-box">
+
+<input
+type="text"
+id="aiInput"
+class="ai-input"
+placeholder="Nhập tin nhắn..."
+>
+
+<button
+class="ai-send"
+onclick="sendAI()">
+↑
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const API_KEY =
+"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";
+
+const aiChat =
+document.getElementById("aiChat");
+
+const aiMessages =
+document.getElementById("aiMessages");
+
+const aiInput =
+document.getElementById("aiInput");
+
+let aiOpened = false;
+
+let messages = [
+
+{
+role:"system",
+content:
+"Bạn là AI trợ lý thông minh nói tiếng Việt."
+}
+
+];
+
+function toggleAI(){
+
+aiOpened=!aiOpened;
+
+aiChat.style.display=
+aiOpened
+? "flex"
+: "none";
+}
+
+function addAI(text,type){
+
+const div=
+document.createElement("div");
+
+div.className=
+"ai-message "+type;
+
+div.innerHTML=text;
+
+aiMessages.appendChild(div);
+
+aiMessages.scrollTop=
+aiMessages.scrollHeight;
+}
+
+async function sendAI(){
+
+const msg=
+aiInput.value.trim();
+
+if(!msg) return;
+
+addAI(msg,"ai-user");
+
+aiInput.value="";
+
+messages.push({
+
+role:"user",
+content:msg
+
+});
+
+try{
+
+const res=
+await fetch(
+"https://api.groq.com/openai/v1/chat/completions",
+{
+
+method:"POST",
+
+headers:{
+
+"Authorization":
+"Bearer "+API_KEY,
+
+"Content-Type":
+"application/json"
+
+},
+
+body:JSON.stringify({
+
+model:
+"llama3-70b-8192",
+
+messages:messages
+
+})
+
+});
+
+const data=
+await res.json();
+
+if(data.error){
+
+addAI(
+"❌ "+data.error.message,
+"ai-bot"
+);
+
+return;
+}
+
+const reply=
+data.choices[0]
+.message.content;
+
+addAI(reply,"ai-bot");
+
+messages.push({
+
+role:"assistant",
+content:reply
+
+});
+
+}
+
+catch(err){
+
+addAI(
+"❌ Lỗi API",
+"ai-bot"
+);
+
+console.log(err);
+}
+}
+
+aiInput.addEventListener(
+"keydown",
+function(e){
+
+if(e.key==="Enter"){
+
+sendAI();
+
+}
+});
+
+</script>
+
+ 
 </body>
 </html>
 
