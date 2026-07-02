@@ -225,6 +225,41 @@ body{
 
 <div class="buttons">
 
+<div style="
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+align-items:center;
+margin-top:10px;
+">
+
+<input
+type="number"
+id="gotoQuestion"
+placeholder="Đến câu..."
+min="1"
+style="
+padding:12px;
+border:none;
+border-radius:12px;
+width:130px;
+font-size:15px;
+font-weight:bold;
+outline:none;
+"
+>
+
+<button class="btn"
+onclick="goToQuestion()">
+Đến Câu
+</button>
+
+<button class="btn"
+onclick="toggleShuffle(this)">
+Xáo Trộn: OFF
+</button>
+
+</div>
     <button class="btn" onclick="reloadQuiz()">
         Làm Lại
     </button>
@@ -604,10 +639,14 @@ function buildQuizHTML(){
     document.getElementById("correctAnswer").innerText=0;
 
     let questions=currentTab==="DN"
+    ? [...parsedQuestionsDN]
+    : [...parsedQuestionsDS];
 
-    ? parsedQuestionsDN
+    if(shuffleMode){
 
-    : parsedQuestionsDS;
+      questions = shuffleArray(questions);
+
+}
 
     document.getElementById("totalQuestion").innerText=questions.length;
 
@@ -769,6 +808,68 @@ function reloadQuiz(){
 
 }
 
+let shuffleMode = false;
+
+function toggleShuffle(btn){
+
+    shuffleMode = !shuffleMode;
+
+    btn.innerText =
+    shuffleMode
+    ? "Xáo Trộn: ON"
+    : "Xáo Trộn: OFF";
+
+    buildQuizHTML();
+}
+
+
+
+function shuffleArray(arr){
+
+    let newArr = [...arr];
+
+    for(let i = newArr.length - 1; i > 0; i--){
+
+        const j =
+        Math.floor(Math.random() * (i + 1));
+
+        [newArr[i], newArr[j]] =
+        [newArr[j], newArr[i]];
+    }
+
+    return newArr;
+}
+
+
+
+function goToQuestion(){
+
+    const num =
+    parseInt(
+        document.getElementById("gotoQuestion").value
+    );
+
+    if(!num) return;
+
+    const questions =
+    document.querySelectorAll(".question");
+
+    if(num < 1 || num > questions.length){
+
+        alert("Không tồn tại câu này");
+
+        return;
+    }
+
+    questions[num - 1].scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
+}
+    
 window.onload=function(){
 
     loadQuestionFiles();
