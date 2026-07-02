@@ -252,8 +252,154 @@ body{
 
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
+    
 <script>
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCqOmAZFH713PIaxis9AHwnq-Y8ecqywWY",
+  authDomain: "tracnghiemtichhopai.firebaseapp.com",
+  databaseURL: "https://tracnghiemtichhopai-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "tracnghiemtichhopai",
+  storageBucket: "tracnghiemtichhopai.firebasestorage.app",
+  messagingSenderId: "65610673311",
+  appId: "1:65610673311:web:bccff7711693fca80f86aa",
+  measurementId: "G-HND46FKT6H"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.database();
+
+ const MAX_DEVICE = 3;
+
+function getDeviceId(){
+
+    let id =
+    localStorage.getItem("device_id");
+
+    if(!id){
+
+        id =
+        "device_" +
+        Math.random()
+        .toString(36)
+        .substring(2,12);
+
+        localStorage.setItem(
+            "device_id",
+            id
+        );
+    }
+
+    return id;
+}
+
+async function checkDevice(){
+
+    const myId = getDeviceId();
+
+    const ref =
+    db.ref("devices");
+
+    const snapshot =
+    await ref.once("value");
+
+    let data =
+    snapshot.val() || {};
+
+    let devices =
+    Object.keys(data);
+
+    
+
+    if(devices.length === 0){
+
+        await ref.child(myId).set({
+
+            owner:true,
+
+            time:Date.now()
+
+        });
+
+        return;
+    }
+
+    
+
+    if(data[myId]){
+
+        return;
+    }
+
+    
+
+    if(devices.length >= MAX_DEVICE){
+
+        document.body.innerHTML = `
+        <div style="
+            position:fixed;
+            inset:0;
+            background:#0f172a;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:999999;
+            font-family:Arial;
+            padding:20px;
+        ">
+
+            <div style="
+                background:rgba(255,255,255,.06);
+                border-radius:24px;
+                padding:35px;
+                max-width:500px;
+                text-align:center;
+                color:white;
+            ">
+
+                <h1 style="
+                    color:#ef4444;
+                    margin-bottom:15px;
+                ">
+                    Không được ủy quyền
+                </h1>
+
+                <p style="
+                    line-height:1.7;
+                    font-size:17px;
+                ">
+                    Bạn không được
+                    @Nhatne2007 ủy quyền.<br><br>
+
+                    Vui lòng xin quyền truy cập
+                    và trở lại sau.
+                </p>
+
+            </div>
+
+        </div>
+        `;
+
+        throw new Error("Blocked");
+    }
+
+    
+
+    await ref.child(myId).set({
+
+        owner:false,
+
+        time:Date.now()
+
+    });
+}
+
+checkDevice();   
+    
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
 
