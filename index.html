@@ -252,28 +252,42 @@ body{
 
 </div>
 
+
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-database-compat.js"></script>
-    
+
 <script>
 
 const firebaseConfig = {
+
   apiKey: "AIzaSyCqOmAZFH713PIaxis9AHwnq-Y8ecqywWY",
+
   authDomain: "tracnghiemtichhopai.firebaseapp.com",
+
   databaseURL: "https://tracnghiemtichhopai-default-rtdb.asia-southeast1.firebasedatabase.app",
+
   projectId: "tracnghiemtichhopai",
+
   storageBucket: "tracnghiemtichhopai.firebasestorage.app",
+
   messagingSenderId: "65610673311",
+
   appId: "1:65610673311:web:bccff7711693fca80f86aa",
+
   measurementId: "G-HND46FKT6H"
+
 };
 
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database();
 
- const MAX_DEVICE = 3;
+
+
+
+const UID = "main_user";
+
 
 function getDeviceId(){
 
@@ -282,11 +296,7 @@ function getDeviceId(){
 
     if(!id){
 
-        id =
-        "device_" +
-        Math.random()
-        .toString(36)
-        .substring(2,12);
+        id = crypto.randomUUID();
 
         localStorage.setItem(
             "device_id",
@@ -297,49 +307,68 @@ function getDeviceId(){
     return id;
 }
 
+
+
+
 async function checkDevice(){
 
     const myId = getDeviceId();
 
-    const ref =
-    db.ref("devices");
+    const devicesRef =
+    db.ref(`devices/${UID}`);
 
     const snapshot =
-    await ref.once("value");
+    await devicesRef.once("value");
 
     let data =
     snapshot.val() || {};
 
+
+
+    // bỏ device bị ban
     let devices =
-    Object.keys(data);
+    Object.entries(data)
+    .filter(([id,d]) => !d.banned);
 
-    
 
-    if(devices.length === 0){
 
-        await ref.child(myId).set({
+  
 
-            owner:true,
+    if(data[myId]){
 
-            time:Date.now()
+        await devicesRef.child(myId).update({
+
+            online:true,
+
+            lastOnline:new Date()
+            .toLocaleString(),
+
+            name:navigator.userAgent
 
         });
 
         return;
     }
 
-    
 
-    if(data[myId]){
 
-        return;
-    }
+   
 
-    
+    let limitSnap =
+    await db.ref("settings/deviceLimit")
+    .once("value");
+
+    let MAX_DEVICE =
+    limitSnap.val() || 3;
+
+
+
+ 
 
     if(devices.length >= MAX_DEVICE){
 
         document.body.innerHTML = `
+
         <div style="
             position:fixed;
             inset:0;
@@ -372,33 +401,56 @@ async function checkDevice(){
                     line-height:1.7;
                     font-size:17px;
                 ">
-                    Bạn không được
-                    @Nhatne2007 ủy quyền.<br><br>
-
-                    Vui lòng xin quyền truy cập
-                    và trở lại sau.
+                    Đã đạt giới hạn thiết bị.
                 </p>
 
             </div>
 
         </div>
+
         `;
 
         throw new Error("Blocked");
     }
 
+
+
     
 
-    await ref.child(myId).set({
+    await devicesRef.child(myId).set({
 
-        owner:false,
+        online:true,
 
-        time:Date.now()
+        banned:false,
+
+        name:navigator.userAgent,
+
+        lastOnline:new Date()
+        .toLocaleString(),
+
+        created:Date.now()
 
     });
+
+
+
+
+
+    devicesRef.child(myId)
+    .onDisconnect()
+    .update({
+
+        online:false
+
+    });
+
 }
 
-checkDevice();   
+
+
+
+checkDevice();
+
     
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
