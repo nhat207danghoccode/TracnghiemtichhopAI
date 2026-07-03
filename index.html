@@ -684,9 +684,7 @@ function buildQuizHTML(){
 
         });
         
-        if(shuffleMode){
-          optionsData = shuffleArray(optionsData);
-       }
+        optionsData = shuffleArray(optionsData);
 
         const optionsList=document.createElement("div");
 
