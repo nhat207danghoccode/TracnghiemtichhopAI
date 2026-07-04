@@ -50,9 +50,9 @@ C.Dimedrol
 D.Bisacodyl
 
 253.Liều dùng của vitamin B1 dùng cho người lớn để chữa bệnh beri-beri:
-A.40-60mg/ngày
+*A.40-60mg/ngày
 B.10-20mg/ngày
-*C.100-200mg/ngày
+C.100-200mg/ngày
 D.500mg/ngày
 
 254.Kháng sinh điều trị bệnh lao:
