@@ -1244,7 +1244,132 @@ sendAI();
 
 </script>
 
- 
+
+<!-- MUSIC BUTTON -->
+
+<style>
+
+.music-float{
+    position:fixed;
+    left:18px;
+    bottom:18px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:none;
+    font-size:26px;
+    cursor:pointer;
+    z-index:999999;
+    background:linear-gradient(
+        135deg,
+        #ff0000,
+        #ff4d4d
+    );
+    color:white;
+    box-shadow:0 0 25px rgba(255,0,0,.6);
+}
+
+.music-float.playing{
+    animation:musicSpin 3s linear infinite;
+}
+
+@keyframes musicSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+</style>
+
+<button
+class="music-float"
+id="musicBtn">
+🎵
+</button>
+
+<div id="yt-player"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+
+let ytPlayer;
+
+let musicReady = false;
+
+let musicPlaying = false;
+
+function onYouTubeIframeAPIReady(){
+
+    ytPlayer = new YT.Player(
+        'yt-player',
+        {
+
+        height:'0',
+        width:'0',
+
+        videoId:'F750t1AtKck',
+
+        playerVars:{
+
+            autoplay:0,
+            controls:0,
+            loop:1,
+            playlist:'F750t1AtKck'
+
+        },
+
+        events:{
+
+            onReady:function(){
+
+                musicReady = true;
+
+                console.log("Music Ready");
+
+            }
+
+        }
+
+    });
+}
+
+document
+.getElementById("musicBtn")
+.addEventListener("click",function(){
+
+    if(!musicReady){
+
+        alert("Nhạc đang tải...");
+        return;
+    }
+
+    if(musicPlaying){
+
+        ytPlayer.pauseVideo();
+
+        this.classList.remove("playing");
+
+        musicPlaying = false;
+
+    }else{
+
+        ytPlayer.playVideo();
+
+        this.classList.add("playing");
+
+        musicPlaying = true;
+    }
+});
+
+</script>
+    
+    
 </body>
 </html>
 
