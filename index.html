@@ -192,6 +192,99 @@ body{
 
 <body>
 
+<div id="warningBox" style="
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:9999999;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+font-family:Arial;
+">
+
+<div style="
+max-width:650px;
+background:white;
+border-radius:24px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,.4);
+animation:showBox .3s ease;
+">
+
+<h2 style="
+color:#ef4444;
+margin-bottom:18px;
+font-size:28px;
+">
+⚠ Thông Báo
+</h2>
+
+<p style="
+font-size:17px;
+line-height:1.8;
+color:#222;
+margin-bottom:25px;
+">
+
+Một số đáp án có thể bị sai hoặc không giống đề vì đã được sửa đổi.<br><br>
+
+Tôi không chịu trách nhiệm trước các rủi ro phát sinh trong quá trình sử dụng.<br><br>
+
+Trình phát nhạc và nền có thể bị delay do bên thứ 3.<br><br>
+
+Nếu muốn sử dụng hãy bật/tắt khoảng 2 ~ 3 lần là được 😆
+
+</p>
+
+<button onclick="closeWarning()" style="
+border:none;
+background:#2563eb;
+color:white;
+padding:14px 30px;
+border-radius:14px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+">
+Tôi Đã Hiểu
+</button>
+
+</div>
+
+</div>
+
+<style>
+
+@keyframes showBox{
+
+from{
+    transform:scale(.8);
+    opacity:0;
+}
+
+to{
+    transform:scale(1);
+    opacity:1;
+}
+}
+
+</style>
+
+<script>
+
+function closeWarning(){
+
+document.getElementById(
+"warningBox"
+).style.display="none";
+
+}
+
+</script>
+    
 <video id="bgVideo" loop playsinline>
     <source src="chill.mp4" type="video/mp4">
 </video>
