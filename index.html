@@ -296,15 +296,77 @@ document.getElementById(
 
 <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;">
 
-    <button class="btn activeTab" id="tabDN" onclick="switchTab('DN')">
-        Câu Hỏi Đúng Nhất
-    </button>
 
-    <button class="btn gray" id="tabDS" onclick="switchTab('DS')">
-        Câu Hỏi Đúng Sai
-    </button>
+<button class="btn activeTab" id="tabDN" onclick="switchTab('DN')">
+    Câu Hỏi Đúng Nhất
+</button>
+
+<button class="btn gray" id="tabDS" onclick="switchTab('DS')">
+    Câu Hỏi Đúng Sai
+</button>
+
+<button class="btn gray" id="tabNOTE" onclick="switchTab('NOTE')">
+    📒 Ghi Chú
+</button>
+
 
 </div>
+
+
+
+<div id="noteBox" style="
+display:none;
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(5px);
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+">
+
+<h2 style="
+margin-bottom:15px;
+color:#111827;
+">
+📒 Ghi Chú Kiến Thức
+</h2>
+
+<textarea
+id="noteArea"
+placeholder="Nhập ghi chú kiến thức tại đây..."
+style="
+width:100%;
+height:350px;
+border:none;
+outline:none;
+resize:none;
+padding:15px;
+font-size:16px;
+border-radius:14px;
+background:#f8fafc;
+line-height:1.7;
+"
+></textarea>
+
+<div style="
+display:flex;
+gap:10px;
+margin-top:15px;
+flex-wrap:wrap;
+">
+
+<button class="btn" onclick="saveNote()">
+💾 Lưu Ghi Chú
+</button>
+
+<button class="btn gray" onclick="clearNote()">
+🗑 Xóa
+</button>
+
+</div>
+
+</div>
+
 
 <div class="topbar">
 
@@ -701,23 +763,84 @@ function parseRawText(text){
 
 function switchTab(type){
 
-    currentTab=type;
 
-    document.getElementById("tabDN").classList.remove("activeTab");
+currentTab = type;
 
-    document.getElementById("tabDS").classList.remove("activeTab");
+document.getElementById("tabDN").classList.remove("activeTab");
+document.getElementById("tabDS").classList.remove("activeTab");
+document.getElementById("tabNOTE").classList.remove("activeTab");
 
-    document.getElementById("tabDN").classList.add("gray");
+document.getElementById("tabDN").classList.add("gray");
+document.getElementById("tabDS").classList.add("gray");
+document.getElementById("tabNOTE").classList.add("gray");
 
-    document.getElementById("tabDS").classList.add("gray");
+document.getElementById("tab"+type).classList.add("activeTab");
+document.getElementById("tab"+type).classList.remove("gray");
 
-    document.getElementById("tab"+type).classList.add("activeTab");
+if(type === "NOTE"){
 
-    document.getElementById("tab"+type).classList.remove("gray");
+    document.getElementById("quiz-container").style.display="none";
+    document.getElementById("noteBox").style.display="block";
 
-    buildQuizHTML();
+    loadNote();
+
+    return;
+}
+
+document.getElementById("quiz-container").style.display="block";
+document.getElementById("noteBox").style.display="none";
+
+buildQuizHTML();
+
 
 }
+
+function saveNote(){
+
+
+const text =
+document.getElementById("noteArea").value;
+
+localStorage.setItem(
+    "nhat_note",
+    text
+);
+
+alert("Đã lưu ghi chú 😆");
+
+
+}
+
+function loadNote(){
+
+
+const saved =
+localStorage.getItem("nhat_note") || "";
+
+document.getElementById(
+    "noteArea"
+).value = saved;
+
+
+}
+
+function clearNote(){
+
+
+if(confirm("Xóa toàn bộ ghi chú?")){
+
+    localStorage.removeItem(
+        "nhat_note"
+    );
+
+    document.getElementById(
+        "noteArea"
+    ).value = "";
+}
+
+
+}
+
 
 function buildQuizHTML(){
 
