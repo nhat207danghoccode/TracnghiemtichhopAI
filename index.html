@@ -647,6 +647,14 @@ let currentTab = "DN";
 
 let correctCount = 0;
 
+let bookmarks = JSON.parse(
+localStorage.getItem("bookmarks") || "[]"
+);
+
+let progress = JSON.parse(
+localStorage.getItem("progress") || "{}"
+);
+
 const bgVideo=document.getElementById("bgVideo");
 const videoBtn=document.getElementById("videoBtn");
 
@@ -878,11 +886,27 @@ else{
 
         qBlock.className="question";
 
+        if(progress[qIndex]){
+
+qBlock.style.opacity=".65";
+
+}
+
         const qText=document.createElement("div");
+qText.className="question-title";
 
-        qText.className="question-title";
+qText.innerHTML=`
+<div style="display:flex;justify-content:space-between;align-items:center;">
+<span>Câu ${qIndex+1}: ${item.q}</span>
 
-        qText.innerText=`Câu ${qIndex+1}: ${item.q}`;
+<span
+style="cursor:pointer;font-size:24px;"
+onclick="toggleBookmark(${qIndex},this)">
+${bookmarks.includes(qIndex)?"⭐":"☆"}
+</span>
+
+</div>
+`;
 
         qBlock.appendChild(qText);
 
@@ -1002,13 +1026,20 @@ else{
 
             if(allCorrect){
 
-                correctCount++;
+    correctCount++;
 
-                document.getElementById("correctAnswer").innerText=correctCount;
+    document.getElementById("correctAnswer").innerText=correctCount;
 
-            }
+}
 
-        };
+progress[qIndex]=true;
+
+localStorage.setItem(
+    "progress",
+    JSON.stringify(progress)
+);
+
+};
 
         qBlock.appendChild(optionsList);
 
@@ -1094,6 +1125,29 @@ function goToQuestion(){
         block:"start"
 
     });
+}
+
+function toggleBookmark(id,el){
+
+if(bookmarks.includes(id)){
+
+bookmarks=bookmarks.filter(x=>x!=id);
+
+el.innerHTML="☆";
+
+}else{
+
+bookmarks.push(id);
+
+el.innerHTML="⭐";
+
+}
+
+localStorage.setItem(
+"bookmarks",
+JSON.stringify(bookmarks)
+);
+
 }
     
 window.onload=function(){
