@@ -1461,6 +1461,71 @@ document
 });
 
 </script>
+
+<style>
+
+#backToTop{
+    position:fixed;
+    right:20px;
+    bottom:100px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    z-index:999999;
+    display:none;
+    box-shadow:0 0 20px rgba(37,99,235,.5);
+    transition:.25s;
+}
+
+#backToTop:hover{
+    transform:translateY(-4px);
+}
+
+</style>
+
+<button id="backToTop">
+↑
+</button>
+
+<script>
+
+const backToTop =
+document.getElementById("backToTop");
+
+window.addEventListener(
+"scroll",
+function(){
+
+    if(window.scrollY > 300){
+
+        backToTop.style.display = "block";
+
+    }else{
+
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.onclick = function(){
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+};
+
+</script>
     
     
 </body>
