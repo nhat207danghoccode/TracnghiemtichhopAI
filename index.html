@@ -852,9 +852,17 @@ function buildQuizHTML(){
 
     document.getElementById("correctAnswer").innerText=0;
 
-    let questions=currentTab==="DN"
-    ? [...parsedQuestionsDN]
-    : [...parsedQuestionsDS];
+let questions;
+
+if(currentTab==="DN"){
+    questions=[...parsedQuestionsDN];
+}
+else if(currentTab==="DS"){
+    questions=[...parsedQuestionsDS];
+}
+else{
+    return;
+}
 
     if(shuffleMode){
 
