@@ -433,6 +433,51 @@ Xáo Trộn: OFF
 
 </div>
 
+<div id="examTop" style="
+display:none;
+background:rgba(255,255,255,.92);
+padding:18px;
+border-radius:18px;
+margin-bottom:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+">
+
+<div>
+
+<h3 style="margin-bottom:8px;">
+📝 Thi Thử
+</h3>
+
+<div id="examTimer"
+style="
+font-size:30px;
+font-weight:bold;
+color:#ef4444;
+">
+45:00
+</div>
+
+</div>
+
+<button
+class="btn"
+onclick="finishExam()">
+
+Nộp Bài
+
+</button>
+
+</div>
+
+</div>
 <div id="quiz-container"></div>
 
 <div class="footer">
@@ -646,6 +691,9 @@ checkDevice();
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
 let examQuestions = [];
+let examSeconds = 2700;
+
+let examInterval = null;
 let examMode = false;
 
 let currentTab = "DN";
@@ -796,6 +844,8 @@ if(type==="EXAM"){
 
     createExam();
 
+    startExam();
+
 }
     
 if(type === "NOTE"){
@@ -811,6 +861,18 @@ if(type === "NOTE"){
 document.getElementById("quiz-container").style.display="block";
 document.getElementById("noteBox").style.display="none";
 
+if(type!="EXAM"){
+
+document.getElementById(
+"examTop"
+).style.display="none";
+
+clearInterval(
+examInterval
+);
+
+}
+    
 buildQuizHTML();
 
 
@@ -1211,6 +1273,65 @@ function createExam(){
 
 }
 
+function startExam(){
+
+    clearInterval(examInterval);
+
+    examSeconds = 2700;
+
+    updateExamTimer();
+
+    document.getElementById(
+        "examTop"
+    ).style.display="block";
+
+    examInterval = setInterval(()=>{
+
+        examSeconds--;
+
+        updateExamTimer();
+
+        if(examSeconds<=0){
+
+            finishExam();
+
+        }
+
+    },1000);
+
+}
+    function updateExamTimer(){
+
+    let m =
+    Math.floor(examSeconds/60);
+
+    let s =
+    examSeconds%60;
+
+    document.getElementById(
+        "examTimer"
+    ).innerHTML=
+
+    String(m).padStart(2,"0")
+
+    +
+
+    ":"
+
+    +
+
+    String(s).padStart(2,"0");
+
+}
+    function finishExam(){
+
+    clearInterval(examInterval);
+
+    alert(
+"Đã kết thúc bài thi!"
+    );
+
+}
     
 function shuffleArray(arr){
 
