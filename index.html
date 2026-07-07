@@ -849,6 +849,60 @@ if(confirm("Xóa toàn bộ ghi chú?")){
 
 }
 
+    function checkAnswer(qBlock, optionsList, submitBtn, qIndex, restore=false){
+
+    if(qBlock.classList.contains("answered")) return;
+
+    qBlock.classList.add("answered");
+
+    const allOptions = optionsList.querySelectorAll(".option");
+
+    let allCorrect = true;
+
+    allOptions.forEach(li=>{
+
+        const inp = li.querySelector("input");
+        const isCorrect = li.classList.contains("correct-target");
+
+        li.style.pointerEvents = "none";
+
+        if(isCorrect){
+            li.classList.add("correct");
+        }
+
+        if(inp.checked !== isCorrect){
+
+            allCorrect = false;
+
+            if(inp.checked && !isCorrect){
+                li.classList.add("wrong");
+            }
+
+        }
+
+    });
+
+    submitBtn.disabled = true;
+
+    if(allCorrect){
+
+        correctCount++;
+        document.getElementById("correctAnswer").innerText = correctCount;
+
+    }
+
+    if(!restore){
+
+        progress[qIndex] = true;
+
+        localStorage.setItem(
+            "progress",
+            JSON.stringify(progress)
+        );
+
+    }
+
+}
 
 function buildQuizHTML(){
 
@@ -1022,60 +1076,12 @@ input.addEventListener("change", () => {
 
         submitBtn.onclick=function(){
 
-            if(qBlock.classList.contains("answered")){
-
-                return;
-
-            }
-
-            qBlock.classList.add("answered");
-
-            const allOptions=optionsList.querySelectorAll(".option");
-
-            let allCorrect=true;
-
-            allOptions.forEach(li=>{
-
-                const inp=li.querySelector("input");
-
-                const isCorrect=li.classList.contains("correct-target");
-
-                li.style.pointerEvents="none";
-
-                if(isCorrect){
-
-                    li.classList.add("correct");
-
-                }
-
-                if(inp.checked!==isCorrect){
-
-                    allCorrect=false;
-
-                    if(inp.checked && !isCorrect){
-
-                        li.classList.add("wrong");
-
-                    }
-
-                }
-
-            });
-
-            if(allCorrect){
-
-    correctCount++;
-
-    document.getElementById("correctAnswer").innerText=correctCount;
-
-}
-
-progress[qIndex]=true;
-
-localStorage.setItem(
-    "progress",
-    JSON.stringify(progress)
-);
+    checkAnswer(
+        qBlock,
+        optionsList,
+        submitBtn,
+        qIndex
+    );
 
 };
 
@@ -1091,7 +1097,17 @@ if(progress[qIndex]){
         qBlock.appendChild(submitBtn);
 
         container.appendChild(qBlock);
+if(progress[qIndex]){
 
+    checkAnswer(
+        qBlock,
+        optionsList,
+        submitBtn,
+        qIndex,
+        true
+    );
+
+}
     });
 
 }
