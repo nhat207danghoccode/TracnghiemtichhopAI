@@ -759,6 +759,7 @@ let examSeconds = 2700;
 
 let examInterval = null;
 let answeredExam = 0;
+let examFinished = false;
 let examMode = false;
 
 let currentTab = "DN";
@@ -1350,6 +1351,7 @@ function createExam(){
 
 function startExam(){
 
+    examFinished = false;
     clearInterval(examInterval);
 
     examSeconds = 2700;
@@ -1401,11 +1403,76 @@ function startExam(){
 }
     function finishExam(){
 
-    clearInterval(examInterval);
+if(examFinished) return;
 
-    alert(
-"Đã kết thúc bài thi!"
-    );
+examFinished = true;
+
+clearInterval(examInterval);
+
+let total = examQuestions.length;
+
+let correct = 0;
+let wrong = 0;
+let todo = 0;
+
+document.querySelectorAll(".question").forEach(q=>{
+
+if(!q.classList.contains("answered")){
+
+todo++;
+
+return;
+
+}
+
+if(q.classList.contains("wrong-question")){
+
+wrong++;
+
+}else{
+
+correct++;
+
+}
+
+});
+
+const score =
+(
+correct/total*10
+).toFixed(2);
+
+alert(
+
+"KẾT QUẢ THI\n\n"+
+
+"Điểm: "+score+"/10\n\n"+
+
+"Đúng: "+correct+"\n"+
+
+"Sai: "+wrong+"\n"+
+
+"Chưa làm: "+todo
+
+);
+
+showAllAnswers();
+
+}
+    function showAllAnswers(){
+
+document.querySelectorAll(".question").forEach(q=>{
+
+const btn =
+q.querySelector(".btn");
+
+if(btn && !btn.disabled){
+
+btn.click();
+
+}
+
+});
 
 }
 
