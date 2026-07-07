@@ -501,6 +501,35 @@ font-weight:bold;
 </div>
 
 </div>
+
+    <div style="
+margin-top:18px;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+">
+
+<button class="btn"
+onclick="filterExam('all')">
+📋 Tất cả
+</button>
+
+<button class="btn"
+onclick="filterExam('todo')">
+⬜ Chưa làm
+</button>
+
+<button class="btn"
+onclick="filterExam('wrong')">
+❌ Sai
+</button>
+
+<button class="btn"
+onclick="filterExam('bookmark')">
+⭐ Bookmark
+</button>
+
+</div>
     
 <button
 class="btn"
@@ -1024,6 +1053,16 @@ if(currentTab=="EXAM"){
 updateProgress();
 
 }
+
+    if(!allCorrect){
+
+qBlock.classList.add("wrong-question");
+
+}else{
+
+qBlock.classList.remove("wrong-question");
+
+}
     
 function buildQuizHTML(){
 
@@ -1421,6 +1460,51 @@ total+
 Math.round(percent)+
 
 "%)";
+
+}
+
+function filterExam(type){
+
+const questions =
+document.querySelectorAll(".question");
+
+questions.forEach((q,index)=>{
+
+q.style.display="block";
+
+if(type=="all") return;
+
+if(type=="todo"){
+
+if(q.classList.contains("answered")){
+
+q.style.display="none";
+
+}
+
+}
+
+if(type=="bookmark"){
+
+if(!bookmarks.includes(index)){
+
+q.style.display="none";
+
+}
+
+}
+
+if(type=="wrong"){
+
+if(!q.classList.contains("wrong-question")){
+
+q.style.display="none";
+
+}
+
+}
+
+});
 
 }
     
