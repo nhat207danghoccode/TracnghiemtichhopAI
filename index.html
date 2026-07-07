@@ -1124,6 +1124,12 @@ function reloadQuiz(){
     localStorage.removeItem("answers");
     localStorage.removeItem("progress");
 
+    
+    progress = {};
+    correctCount = 0;
+
+    document.getElementById("correctAnswer").innerText = 0;
+
     buildQuizHTML();
 
     window.scrollTo({
