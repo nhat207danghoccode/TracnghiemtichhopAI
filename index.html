@@ -308,6 +308,9 @@ document.getElementById(
 <button class="btn gray" id="tabNOTE" onclick="switchTab('NOTE')">
     📒 Ghi Chú
 </button>
+<button class="btn gray" id="tabEXAM" onclick="switchTab('EXAM')">
+📝 Thi Thử
+</button>
 
 
 </div>
@@ -642,6 +645,8 @@ checkDevice();
     
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
+let examQuestions = [];
+let examMode = false;
 
 let currentTab = "DN";
 
@@ -777,14 +782,22 @@ currentTab = type;
 document.getElementById("tabDN").classList.remove("activeTab");
 document.getElementById("tabDS").classList.remove("activeTab");
 document.getElementById("tabNOTE").classList.remove("activeTab");
+document.getElementById("tabEXAM").classList.remove("activeTab");
 
 document.getElementById("tabDN").classList.add("gray");
 document.getElementById("tabDS").classList.add("gray");
 document.getElementById("tabNOTE").classList.add("gray");
-
+document.getElementById("tabEXAM").classList.add("gray");
+    
 document.getElementById("tab"+type).classList.add("activeTab");
 document.getElementById("tab"+type).classList.remove("gray");
 
+if(type==="EXAM"){
+
+    createExam();
+
+}
+    
 if(type === "NOTE"){
 
     document.getElementById("quiz-container").style.display="none";
@@ -921,13 +934,24 @@ function buildQuizHTML(){
 let questions;
 
 if(currentTab==="DN"){
+
     questions=[...parsedQuestionsDN];
+
 }
 else if(currentTab==="DS"){
+
     questions=[...parsedQuestionsDS];
+
+}
+else if(currentTab==="EXAM"){
+
+    questions=[...examQuestions];
+
 }
 else{
+
     return;
+
 }
 
     if(shuffleMode){
@@ -1153,7 +1177,41 @@ function toggleShuffle(btn){
 }
 
 
+function createExam(){
 
+    const dn = shuffleArray([...parsedQuestionsDN]).slice(0,40);
+
+    const ds = shuffleArray([...parsedQuestionsDS]).slice(0,40);
+
+    examQuestions=[];
+
+    while(dn.length || ds.length){
+
+        if(dn.length){
+
+            examQuestions.push({
+                ...dn.shift(),
+                mode:"DN"
+            });
+
+        }
+
+        if(ds.length){
+
+            examQuestions.push({
+                ...ds.shift(),
+                mode:"DS"
+            });
+
+        }
+
+    }
+
+    examQuestions=shuffleArray(examQuestions);
+
+}
+
+    
 function shuffleArray(arr){
 
     let newArr = [...arr];
