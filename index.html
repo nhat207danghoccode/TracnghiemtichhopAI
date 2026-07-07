@@ -467,6 +467,41 @@ color:#ef4444;
 
 </div>
 
+<div style="
+margin-top:15px;
+">
+
+<div style="
+height:18px;
+background:#e5e7eb;
+border-radius:999px;
+overflow:hidden;
+">
+
+<div id="examProgressBar"
+style="
+width:0%;
+height:100%;
+background:#22c55e;
+transition:.3s;
+">
+</div>
+
+</div>
+
+<div
+id="examProgressText"
+style="
+margin-top:8px;
+font-weight:bold;
+">
+
+0 / 80 (0%)
+
+</div>
+
+</div>
+    
 <button
 class="btn"
 onclick="finishExam()">
@@ -694,6 +729,7 @@ let examQuestions = [];
 let examSeconds = 2700;
 
 let examInterval = null;
+let answeredExam = 0;
 let examMode = false;
 
 let currentTab = "DN";
@@ -983,6 +1019,12 @@ localStorage.setItem(
 
 }
 
+if(currentTab=="EXAM"){
+
+updateProgress();
+
+}
+    
 function buildQuizHTML(){
 
     const container=document.getElementById("quiz-container");
@@ -1290,6 +1332,7 @@ function startExam(){
         examSeconds--;
 
         updateExamTimer();
+        updateProgress();
 
         if(examSeconds<=0){
 
@@ -1330,6 +1373,54 @@ function startExam(){
     alert(
 "Đã kết thúc bài thi!"
     );
+
+}
+
+    function updateProgress(){
+
+const total =
+examQuestions.length;
+
+answeredExam = 0;
+
+document.querySelectorAll(".question").forEach(q=>{
+
+if(q.classList.contains("answered")){
+
+answeredExam++;
+
+}
+
+});
+
+const percent =
+total
+?
+answeredExam/total*100
+:
+0;
+
+document.getElementById(
+"examProgressBar"
+).style.width=
+
+percent+"%";
+
+document.getElementById(
+"examProgressText"
+).innerHTML=
+
+answeredExam+
+
+" / "+
+
+total+
+
+" ("+
+
+Math.round(percent)+
+
+"%)";
 
 }
     
