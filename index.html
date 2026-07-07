@@ -1033,34 +1033,28 @@ if(confirm("Xóa toàn bộ ghi chú?")){
 
     if(!restore){
 
-        if(!progress[currentTab]){
-    progress[currentTab] = {};
-}
-
-progress[currentTab][qIndex] = true;
-
-localStorage.setItem(
-    "progress",
-    JSON.stringify(progress)
-);
-
+    if(!progress[currentTab]){
+        progress[currentTab] = {};
     }
+
+    progress[currentTab][qIndex] = true;
+
+    localStorage.setItem(
+        "progress",
+        JSON.stringify(progress)
+    );
 
 }
 
 if(currentTab=="EXAM"){
-
-updateProgress();
-
+    updateProgress();
 }
 
-    if(!allCorrect){
-
-qBlock.classList.add("wrong-question");
-
+if(!allCorrect){
+    qBlock.classList.add("wrong-question");
 }else{
-
-qBlock.classList.remove("wrong-question");
+    qBlock.classList.remove("wrong-question");
+}
 
 }
     
