@@ -893,12 +893,16 @@ if(confirm("Xóa toàn bộ ghi chú?")){
 
     if(!restore){
 
-        progress[qIndex] = true;
+        if(!progress[currentTab]){
+    progress[currentTab] = {};
+}
 
-        localStorage.setItem(
-            "progress",
-            JSON.stringify(progress)
-        );
+progress[currentTab][qIndex] = true;
+
+localStorage.setItem(
+    "progress",
+    JSON.stringify(progress)
+);
 
     }
 
@@ -1086,18 +1090,17 @@ input.addEventListener("change", () => {
 };
 
         
-if(progress[qIndex]){
 
-    submitBtn.click();
-
-}
 
         qBlock.appendChild(optionsList);
 
         qBlock.appendChild(submitBtn);
 
         container.appendChild(qBlock);
-if(progress[qIndex]){
+if(
+    progress[currentTab] &&
+    progress[currentTab][qIndex]
+){
 
     checkAnswer(
         qBlock,
