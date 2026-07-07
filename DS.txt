@@ -239,8 +239,8 @@ A.Đúng
 *B.Sai
 
 59. Khi pH nước tiểu thấp các thuốc có tính kiềm dễ thải trừ.
-*A.Sai
-B.Đúng
+A.Sai
+*B.Đúng
 
 60. Khi pH nước tiểu cao các thuốc có tính acid nhẹ dễ thải trừ.
 *A.Đúng
