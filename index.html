@@ -958,6 +958,48 @@ ${bookmarks.includes(qIndex)?"⭐":"☆"}
 
             input.name=`question_${qIndex}`;
 
+            
+const savedAnswers = JSON.parse(localStorage.getItem("answers") || "{}");
+
+if (
+    savedAnswers[currentTab] &&
+    savedAnswers[currentTab][qIndex] &&
+    savedAnswers[currentTab][qIndex].includes(opt.text)
+){
+    input.checked = true;
+}
+
+
+input.addEventListener("change", () => {
+
+    let answers = JSON.parse(localStorage.getItem("answers") || "{}");
+
+    if(!answers[currentTab]) answers[currentTab] = {};
+    if(!answers[currentTab][qIndex]) answers[currentTab][qIndex] = [];
+
+    if(inputType === "radio"){
+
+        answers[currentTab][qIndex] = [opt.text];
+
+    }else{
+
+        const arr = [];
+
+        optionsList.querySelectorAll("input").forEach((i,index)=>{
+
+            if(i.checked){
+                arr.push(optionsData[index].text);
+            }
+
+        });
+
+        answers[currentTab][qIndex] = arr;
+    }
+
+    localStorage.setItem("answers", JSON.stringify(answers));
+
+});
+
             const span=document.createElement("span");
 
             span.innerText=opt.text;
@@ -1049,18 +1091,21 @@ localStorage.setItem(
 
 function reloadQuiz(){
 
+    if(!confirm("Bạn có chắc muốn làm lại?")){
+        return;
+    }
+
+    localStorage.removeItem("answers");
+    localStorage.removeItem("progress");
+
     buildQuizHTML();
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 }
-
 let shuffleMode = false;
 
 function toggleShuffle(btn){
