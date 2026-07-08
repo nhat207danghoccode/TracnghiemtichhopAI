@@ -543,6 +543,21 @@ Nộp Bài
 
 </div>
 <div id="quiz-container"></div>
+<div id="navHandle">☰</div>
+
+<div id="navPanel">
+
+<div id="navHeader">
+
+<span>Đi đến câu</span>
+
+<button onclick="toggleNav()">✕</button>
+
+</div>
+
+<div id="navGrid"></div>
+
+</div>
 
 <div class="footer">
     Create @Nhat2007 - Nguyễn Phi Nhật
@@ -941,7 +956,7 @@ examInterval
     
 buildQuizHTML();
 
-
+buildNavPanel();
 }
 
 function saveNote(){
@@ -1614,7 +1629,67 @@ function goToQuestion(){
 
     });
 }
+function toggleNav(){
 
+const panel=document.getElementById("navPanel");
+
+panel.style.display=
+
+panel.style.display=="block"
+
+?
+
+"none"
+
+:
+
+"block";
+
+}
+
+document
+
+.getElementById("navHandle")
+
+.onclick=toggleNav;
+
+function buildNavPanel(){
+
+const grid=document.getElementById("navGrid");
+
+grid.innerHTML="";
+
+const questions=
+
+document.querySelectorAll(".question");
+
+questions.forEach((q,index)=>{
+
+const btn=document.createElement("button");
+
+btn.className="navBtn";
+
+btn.innerText=index+1;
+
+btn.onclick=function(){
+
+q.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+toggleNav();
+
+};
+
+grid.appendChild(btn);
+
+});
+
+}
 function toggleBookmark(id,el){
 
 if(bookmarks.includes(id)){
@@ -2162,7 +2237,143 @@ document
 #backToTop:hover{
     transform:translateY(-4px);
 }
+#navHandle{
 
+position:fixed;
+
+right:0;
+
+top:45%;
+
+width:28px;
+
+height:90px;
+
+background:#2563eb;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:12px 0 0 12px;
+
+cursor:pointer;
+
+font-size:20px;
+
+z-index:999999;
+
+box-shadow:0 0 15px rgba(0,0,0,.2);
+
+}
+
+#navPanel{
+
+position:fixed;
+
+right:15px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:280px;
+
+height:420px;
+
+background:#fff;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+display:none;
+
+z-index:999999;
+
+overflow:hidden;
+
+}
+
+#navHeader{
+
+height:50px;
+
+background:#2563eb;
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 15px;
+
+font-weight:bold;
+
+}
+
+#navHeader button{
+
+border:none;
+
+background:none;
+
+color:#fff;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+#navGrid{
+
+padding:12px;
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:8px;
+
+overflow-y:auto;
+
+height:370px;
+
+}
+
+.navBtn{
+
+height:42px;
+
+border:none;
+
+border-radius:10px;
+
+background:#eef2ff;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.navBtn:hover{
+
+background:#2563eb;
+
+color:white;
+
+}
 </style>
 
 <button id="backToTop">
