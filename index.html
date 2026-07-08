@@ -1071,7 +1071,7 @@ if(!allCorrect){
 }else{
     qBlock.classList.remove("wrong-question");
 }
-
+updateNavColors();
 }
     
 function buildQuizHTML(){
@@ -1688,8 +1688,84 @@ toggleNav();
 grid.appendChild(btn);
 
 });
+updateNavColors();
+}
+
+window.addEventListener("scroll",()=>{
+
+const questions=document.querySelectorAll(".question");
+const btns=document.querySelectorAll(".navBtn");
+
+let current=0;
+
+questions.forEach((q,i)=>{
+
+const r=q.getBoundingClientRect();
+
+if(r.top<180){
+
+current=i;
 
 }
+
+});
+
+btns.forEach(b=>b.classList.remove("current"));
+
+if(btns[current]){
+
+btns[current].classList.add("current");
+
+}
+
+});
+
+function updateNavColors(){
+
+const btns=document.querySelectorAll(".navBtn");
+const questions=document.querySelectorAll(".question");
+
+btns.forEach((btn,i)=>{
+
+btn.className="navBtn";
+
+const q=questions[i];
+
+if(!q){
+btn.classList.add("todo");
+return;
+}
+
+if(q.classList.contains("answered")){
+
+if(q.classList.contains("wrong-question")){
+
+btn.classList.add("wrong");
+
+}else{
+
+btn.classList.add("correct");
+
+}
+
+}else{
+
+btn.classList.add("todo");
+
+}
+
+if(bookmarks.includes(i)){
+
+btn.classList.remove("todo","correct","wrong");
+
+btn.classList.add("bookmark");
+
+}
+
+});
+
+}
+
 function toggleBookmark(id,el){
 
 if(bookmarks.includes(id)){
@@ -1710,7 +1786,7 @@ localStorage.setItem(
 "bookmarks",
 JSON.stringify(bookmarks)
 );
-
+updateNavColors()
 }
     
 window.onload=function(){
@@ -2350,21 +2426,37 @@ height:370px;
 }
 
 .navBtn{
-
 height:42px;
-
 border:none;
-
 border-radius:10px;
-
-background:#eef2ff;
-
+background:#e5e7eb;
 font-weight:bold;
-
 cursor:pointer;
-
 transition:.2s;
+}
 
+.navBtn.todo{
+background:#e5e7eb;
+color:#111;
+}
+
+.navBtn.correct{
+background:#22c55e;
+color:#fff;
+}
+
+.navBtn.wrong{
+background:#ef4444;
+color:#fff;
+}
+
+.navBtn.bookmark{
+background:#facc15 !important;
+color:#111;
+}
+
+.navBtn.current{
+box-shadow:0 0 0 3px #2563eb inset;
 }
 
 .navBtn:hover{
