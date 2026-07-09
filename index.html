@@ -1292,11 +1292,16 @@ if(
 
 }
 
-function reloadQuiz(){
+async function reloadQuiz(){
 
-    if(!confirm("Bạn có chắc muốn làm lại?")){
-        return;
-    }
+    const ok = await showPopup(
+"🔄 Làm lại",
+"Bạn có chắc muốn xoá toàn bộ bài làm?",
+"🗑",
+true
+);
+
+if(!ok) return;
 
     localStorage.removeItem("answers");
     localStorage.removeItem("progress");
@@ -1457,18 +1462,18 @@ const score =
 correct/total*10
 ).toFixed(2);
 
-alert(
+showPopup(
+"🎉 Kết quả",
 
-"KẾT QUẢ THI\n\n"+
+`Điểm: ${score}/10
 
-"Điểm: "+score+"/10\n\n"+
+✅ Đúng: ${correct}
 
-"Đúng: "+correct+"\n"+
+❌ Sai: ${wrong}
 
-"Sai: "+wrong+"\n"+
+⏳ Chưa làm: ${todo}`,
 
-"Chưa làm: "+todo
-
+"🏆"
 );
 
 showAllAnswers();
@@ -2500,9 +2505,195 @@ backToTop.onclick = function(){
 
     });
 };
+let popupCallback=null;
 
+function showPopup(title,text,icon="🎉",confirmMode=false){
+
+document.getElementById("popupTitle").innerText=title;
+
+document.getElementById("popupText").innerText=text;
+
+document.getElementById("popupIcon").innerText=icon;
+
+document.getElementById("cancelBtn").style.display=
+confirmMode?"block":"none";
+
+document.getElementById("popup").style.display="flex";
+
+return new Promise(resolve=>{
+popupCallback=resolve;
+});
+
+}
+
+function closePopup(result){
+
+document.getElementById("popup").style.display="none";
+
+if(popupCallback){
+
+popupCallback(result);
+
+popupCallback=null;
+
+}
+
+}
 </script>
     
-    
+    <div id="popup" class="popup">
+
+<div class="popup-box">
+
+<div id="popupIcon" class="popup-icon">🎉</div>
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupText"></p>
+
+<div class="popup-buttons">
+
+<button class="popup-btn ok"
+onclick="closePopup(true)">
+OK
+</button>
+
+<button
+id="cancelBtn"
+class="popup-btn cancel"
+onclick="closePopup(false)">
+Huỷ
+</button>
+
+</div>
+
+</div>
+
+</div>
+.popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999999999;
+backdrop-filter:blur(5px);
+animation:fade .25s;
+}
+
+.popup-box{
+
+width:330px;
+max-width:92%;
+
+background:#fff;
+
+border-radius:24px;
+
+padding:28px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+animation:popupShow .25s;
+}
+
+.popup-icon{
+
+font-size:58px;
+
+margin-bottom:15px;
+}
+
+.popup-box h2{
+
+font-size:26px;
+
+margin-bottom:12px;
+
+color:#111827;
+}
+
+.popup-box p{
+
+font-size:17px;
+
+line-height:1.6;
+
+color:#555;
+
+margin-bottom:25px;
+}
+
+.popup-buttons{
+
+display:flex;
+
+gap:12px;
+}
+
+.popup-btn{
+
+flex:1;
+
+border:none;
+
+padding:14px;
+
+border-radius:14px;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+.popup-btn.ok{
+
+background:#2563eb;
+
+color:#fff;
+}
+
+.popup-btn.cancel{
+
+background:#e5e7eb;
+}
+
+.popup-btn:active{
+
+transform:scale(.96);
+}
+
+@keyframes popupShow{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes fade{
+
+from{opacity:0;}
+
+to{opacity:1;}
+
+}
 </body>
 </html>
