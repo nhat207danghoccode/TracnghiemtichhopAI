@@ -1314,10 +1314,14 @@ if(!ok) return;
 
     buildQuizHTML();
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+buildNavPanel();
+
+updateNavColors();
+
+window.scrollTo({
+    top:0,
+    behavior:"smooth"
+});
 
 }
 let shuffleMode = false;
@@ -1421,7 +1425,7 @@ function startExam(){
     String(s).padStart(2,"0");
 
 }
-    function finishExam(){
+    async function finishExam(){
 
 if(examFinished) return;
 
@@ -1462,7 +1466,7 @@ const score =
 correct/total*10
 ).toFixed(2);
 
-showPopup(
+await showPopup(
 "🎉 Kết quả",
 
 `Điểm: ${score}/10
@@ -1475,6 +1479,8 @@ showPopup(
 
 "🏆"
 );
+
+showAllAnswers();
 
 showAllAnswers();
 
@@ -2471,77 +2477,8 @@ background:#2563eb;
 color:white;
 
 }
-</style>
-
-<button id="backToTop">
-↑
-</button>
-
-<script>
-
-const backToTop =
-document.getElementById("backToTop");
-
-window.addEventListener(
-"scroll",
-function(){
-
-    if(window.scrollY > 300){
-
-        backToTop.style.display = "block";
-
-    }else{
-
-        backToTop.style.display = "none";
-    }
-});
-
-backToTop.onclick = function(){
-
-    window.scrollTo({
-
-        top:0,
-        behavior:"smooth"
-
-    });
-};
-let popupCallback=null;
-
-function showPopup(title,text,icon="🎉",confirmMode=false){
-
-document.getElementById("popupTitle").innerText=title;
-
-document.getElementById("popupText").innerText=text;
-
-document.getElementById("popupIcon").innerText=icon;
-
-document.getElementById("cancelBtn").style.display=
-confirmMode?"block":"none";
-
-document.getElementById("popup").style.display="flex";
-
-return new Promise(resolve=>{
-popupCallback=resolve;
-});
-
-}
-
-function closePopup(result){
-
-document.getElementById("popup").style.display="none";
-
-if(popupCallback){
-
-popupCallback(result);
-
-popupCallback=null;
-
-}
-
-}
-</script>
     
-    <div id="popup" class="popup">
+  <div id="popup" class="popup">
 
 <div class="popup-box">
 
@@ -2569,7 +2506,7 @@ Huỷ
 
 </div>
 
-</div>
+</div>  
 .popup{
 position:fixed;
 inset:0;
@@ -2695,5 +2632,75 @@ from{opacity:0;}
 to{opacity:1;}
 
 }
+</style>
+
+<button id="backToTop">
+↑
+</button>
+
+<script>
+
+const backToTop =
+document.getElementById("backToTop");
+
+window.addEventListener(
+"scroll",
+function(){
+
+    if(window.scrollY > 300){
+
+        backToTop.style.display = "block";
+
+    }else{
+
+        backToTop.style.display = "none";
+    }
+});
+
+backToTop.onclick = function(){
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+};
+let popupCallback=null;
+
+function showPopup(title,text,icon="🎉",confirmMode=false){
+
+document.getElementById("popupTitle").innerText=title;
+
+document.getElementById("popupText").innerText=text;
+
+document.getElementById("popupIcon").innerText=icon;
+
+document.getElementById("cancelBtn").style.display=
+confirmMode?"block":"none";
+
+document.getElementById("popup").style.display="flex";
+
+return new Promise(resolve=>{
+popupCallback=resolve;
+});
+
+}
+
+function closePopup(result){
+
+document.getElementById("popup").style.display="none";
+
+if(popupCallback){
+
+popupCallback(result);
+
+popupCallback=null;
+
+}
+
+}
+</script>
+    
 </body>
 </html>
