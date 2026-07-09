@@ -965,8 +965,8 @@ B.Sai
 B.Sai
 
 236. Tất cả các kháng sinh đều là thuốc bán theo đơn
-A.Đúng
-*B.Sai
+*A.Đúng
+B.Sai
 
 237. Gentamycin thường dùng ở dạng uống và dạng tiêm
 *A.Sai
