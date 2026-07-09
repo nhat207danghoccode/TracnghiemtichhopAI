@@ -432,7 +432,35 @@ Xáo Trộn: OFF
 </div>
 
 </div>
+  <div id="popup" class="popup">
 
+<div class="popup-box">
+
+<div id="popupIcon" class="popup-icon">🎉</div>
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupText"></p>
+
+<div class="popup-buttons">
+
+<button class="popup-btn ok"
+onclick="closePopup(true)">
+OK
+</button>
+
+<button
+id="cancelBtn"
+class="popup-btn cancel"
+onclick="closePopup(false)">
+Huỷ
+</button>
+
+</div>
+
+</div>
+
+</div>  
 <div id="examTop" style="
 display:none;
 background:rgba(255,255,255,.92);
@@ -2478,35 +2506,7 @@ color:white;
 
 }
     
-  <div id="popup" class="popup">
 
-<div class="popup-box">
-
-<div id="popupIcon" class="popup-icon">🎉</div>
-
-<h2 id="popupTitle"></h2>
-
-<p id="popupText"></p>
-
-<div class="popup-buttons">
-
-<button class="popup-btn ok"
-onclick="closePopup(true)">
-OK
-</button>
-
-<button
-id="cancelBtn"
-class="popup-btn cancel"
-onclick="closePopup(false)">
-Huỷ
-</button>
-
-</div>
-
-</div>
-
-</div>  
 .popup{
 position:fixed;
 inset:0;
