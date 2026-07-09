@@ -301,8 +301,8 @@ A.Đúng
 B.Đúng
 
 74. Viên nén vitamin C không có tác dụng cầm máu.
-A.Đúng
-*B.Sai
+*A.Đúng
+B.Sai
 
 75. Tetracyclin gây xốp và răng đen ở trẻ em.
 *A.Đúng
