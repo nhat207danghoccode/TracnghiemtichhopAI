@@ -9,8 +9,8 @@ B.Sai
 B.Sai
 
 3. Tiêm dưới da đau hơn tiêm bắp thịt.
-*A.Đúng
-B.Sai
+A.Đúng
+*B.Sai
 
 4. Tiêm bắp thịt thuốc hấp thu vào máu nhanh hơn tiêm dưới da.
 *A.Đúng
