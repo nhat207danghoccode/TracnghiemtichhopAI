@@ -2258,37 +2258,28 @@ let musicPlaying = false;
 
 function onYouTubeIframeAPIReady(){
 
-    ytPlayer = new YT.Player(
-        'yt-player',
-        {
+    ytPlayer = new YT.Player('yt-player',{
 
         height:'0',
         width:'0',
 
-        videoId:'F750t1AtKck',
-
         playerVars:{
-
+            listType:'playlist',
+            list:'PLOzcXowD9HRQ', 
             autoplay:0,
             controls:0,
-            loop:1,
-            playlist:'F750t1AtKck'
-
+            loop:1
         },
 
         events:{
-
             onReady:function(){
-
                 musicReady = true;
-
                 console.log("Music Ready");
-
             }
-
         }
 
     });
+
 }
 
 document
