@@ -229,9 +229,9 @@ color:#222;
 margin-bottom:25px;
 ">
 
-Ê phần đúng sai sửa đáp án câu 159 với 189 kiểm tra lại xem trong đề á <br>
-Trình Phát nhạc chỉ hộ trợ IOS . ADR lười làm vì phải dow file Sorry<br>
-    Con Mèo 😻 dùng chuyển câu á ấn vô đó quên nói 😌
+-Ê phần đúng sai sửa đáp án câu 159 với 189 kiểm tra lại xem trong đề á .  <br>
+- Xài tạm nhạc lỏ đi kiếm chả ra nhạc (Nhạc cho All tb hơi lỏ nma thôi tạm vậy) <br>    
+-Con Mèo này (😻) dùng chuyển câu á ấn vô đó quên nói 😌
 </p>
 
 <button onclick="closeWarning()" style="
@@ -280,9 +280,9 @@ document.getElementById(
 
 </script>
     
-<video id="bgVideo" loop playsinline>
-    <source src="chill.mp4" type="video/mp4">
-</video>
+<audio id="bgMusic" loop>
+    <source src="zing.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
 
@@ -417,9 +417,9 @@ Xáo Trộn: OFF
         Làm Lại
     </button>
 
-    <button class="btn" onclick="toggleVideo()" id="videoBtn">
-        Ngủ Đi Vl
-    </button>
+   <button class="btn" onclick="toggleMusic()" id="zingBtn">
+    🎵 Bật Nhạc All Thiết Bị 
+</button>
 
     <button class="btn gray"
     onclick="window.open('https://www.facebook.com/share/1DDpZ2iHQF/?mibextid=wwXIfr')">
@@ -814,35 +814,24 @@ let progress = JSON.parse(
 localStorage.getItem("progress") || "{}"
 );
 
-const bgVideo=document.getElementById("bgVideo");
-const videoBtn=document.getElementById("videoBtn");
+const bgMusic=document.getElementById("bgMusic");
+const zingBtn = document.getElementById("zingBtn");
 
-bgVideo.volume=1;
-bgVideo.muted=false;
+bgMusic.volume=1;
 
-function toggleVideo(){
+function toggleMusic(){
 
-    if(bgVideo.style.display==="none"){
+    if(bgMusic.paused){
 
-        bgVideo.style.display="block";
+        bgMusic.play();
 
-        bgVideo.play();
+        zingBtn.innerText = "🔇 Tắt Nhạc";
 
-        document.body.style.background="#fff";
+    }else{
 
-        videoBtn.innerText="Tắt Nền";
+        bgMusic.pause();
 
-    }
-
-    else{
-
-        bgVideo.style.display="none";
-
-        bgVideo.pause();
-
-        document.body.style.background="url('suy.JPG') center center / cover no-repeat fixed";
-
-        videoBtn.innerText="Bật Nền";
+        zingBtn.innerText = "🎵 Bật Nhạc";
 
     }
 
