@@ -457,7 +457,7 @@ C. Gây được miễn dịch ở mức độ cao.
 D. Vô trùng.
 
 77. Các phản ứng do vaccin gây ra.
-A. Đa số vaccin không nên phản ứng gì nguy hiểm.
+*A. Đa số vaccin không nên phản ứng gì nguy hiểm.
 B. Gây sốt ở mọi đối tượng được tiêm.
 C. Gây nên những cơn nhiễm trùng nhẹ
 D. Gây loét tại nơi tiêm.
