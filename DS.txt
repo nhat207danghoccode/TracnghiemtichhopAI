@@ -1020,8 +1020,8 @@ A. Đúng
 *B. Sai
 
 30. Bệnh phẩm tả nếu không được xét nghiệm ngay phải cho vào dung dịch bảo quản
-A. Đúng
-*B. Sai
+*A. Đúng
+B. Sai
 
 31. Chẩn đoán vi sinh bệnh tả bằng hai phương pháp trực tiếp và gián tiếp.
 *A. Đúng
