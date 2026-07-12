@@ -806,6 +806,12 @@ let currentTab = "DN";
 
 let correctCount = 0;
 
+let wrongQuestions =
+JSON.parse(
+localStorage.getItem("wrongQuestions") || "[]"
+);
+
+
 let bookmarks = JSON.parse(
 localStorage.getItem("bookmarks") || "[]"
 );
@@ -863,6 +869,8 @@ async function loadQuestionFiles(){
 
 function parseRawText(text){
 
+    let questionId = 0;
+
     const lines=text.split('\n');
 
     let questions=[];
@@ -887,12 +895,12 @@ function parseRawText(text){
 
             currentQuestion={
 
-                q:cleanQ,
+    id:questionId++,
 
-                arr:[]
+    q:cleanQ,
 
-            };
-
+    arr:[]
+};
         }
 
         else if(/^(\*?[A-E]\s*[\.\:\s])/.test(trimmed)){
@@ -1019,7 +1027,14 @@ if(confirm("Xóa toàn bộ ghi chú?")){
 
 }
 
-    function checkAnswer(qBlock, optionsList, submitBtn, qIndex, restore=false){
+    function checkAnswer(
+qBlock,
+optionsList,
+submitBtn,
+qIndex,
+restore=false,
+item
+){
 
     if(qBlock.classList.contains("answered")) return;
 
@@ -1081,9 +1096,24 @@ if(currentTab=="EXAM"){
 }
 
 if(!allCorrect){
+
     qBlock.classList.add("wrong-question");
+
+    if(!wrongQuestions.includes(item.id)){
+
+        wrongQuestions.push(item.id);
+
+        localStorage.setItem(
+            "wrongQuestions",
+            JSON.stringify(wrongQuestions)
+        );
+
+    }
+
 }else{
+
     qBlock.classList.remove("wrong-question");
+
 }
 updateNavColors();
 }
@@ -1272,11 +1302,13 @@ input.addEventListener("change", () => {
         submitBtn.onclick=function(){
 
     checkAnswer(
-        qBlock,
-        optionsList,
-        submitBtn,
-        qIndex
-    );
+    qBlock,
+    optionsList,
+    submitBtn,
+    qIndex,
+    false,
+    item
+);
 
 };
 
@@ -1294,12 +1326,13 @@ if(
 ){
 
     checkAnswer(
-        qBlock,
-        optionsList,
-        submitBtn,
-        qIndex,
-        true
-    );
+    qBlock,
+    optionsList,
+    submitBtn,
+    qIndex,
+    true,
+    item
+);
 
 }
     });
