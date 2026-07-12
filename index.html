@@ -412,6 +412,11 @@ onclick="toggleShuffle(this)">
 Xáo Trộn: OFF
 </button>
 
+<button class="btn gray"
+onclick="reviewWrongQuestions()">
+❌ Ôn câu sai
+</button>
+
 </div>
     <button class="btn" onclick="reloadQuiz()">
         Làm Lại
@@ -1078,11 +1083,12 @@ item
 
     if(!restore){
 
-    if(!progress[currentTab]){
-        progress[currentTab] = {};
-    }
+    if(
+    progress[currentTab] &&
+    progress[currentTab][item.id]
+){
 
-    progress[currentTab][qIndex] = true;
+    progress[currentTab][item.id] = true;
 
     localStorage.setItem(
         "progress",
@@ -1140,6 +1146,13 @@ else if(currentTab==="DS"){
     questions=[...parsedQuestionsDS];
 
 }
+if(reviewWrongMode){
+
+    questions = questions.filter(q =>
+        wrongQuestions.includes(q.id)
+    );
+
+}
 else if(currentTab==="EXAM"){
 
     questions=[...examQuestions];
@@ -1176,8 +1189,8 @@ qText.innerHTML=`
 
 <span
 style="cursor:pointer;font-size:24px;"
-onclick="toggleBookmark(${qIndex},this)">
-${bookmarks.includes(qIndex)?"⭐":"☆"}
+onclick="toggleBookmark(${item.id},this)">
+${bookmarks.includes(item.id)?"⭐":"☆"}
 </span>
 
 </div>
@@ -1242,8 +1255,8 @@ const savedAnswers = JSON.parse(localStorage.getItem("answers") || "{}");
 
 if (
     savedAnswers[currentTab] &&
-    savedAnswers[currentTab][qIndex] &&
-    savedAnswers[currentTab][qIndex].includes(opt.text)
+    savedAnswers[currentTab][item.id] &&
+    savedAnswers[currentTab][item.id].includes(opt.text)
 ){
     input.checked = true;
 }
@@ -1254,11 +1267,13 @@ input.addEventListener("change", () => {
     let answers = JSON.parse(localStorage.getItem("answers") || "{}");
 
     if(!answers[currentTab]) answers[currentTab] = {};
-    if(!answers[currentTab][qIndex]) answers[currentTab][qIndex] = [];
+if(!answers[currentTab][item.id])
+    answers[currentTab][item.id]=[];
+    
 
     if(inputType === "radio"){
 
-        answers[currentTab][qIndex] = [opt.text];
+        answers[currentTab][item.id] = [opt.text];
 
     }else{
 
@@ -1272,7 +1287,7 @@ input.addEventListener("change", () => {
 
         });
 
-        answers[currentTab][qIndex] = arr;
+        answers[currentTab][item.id] = arr;
     }
 
     localStorage.setItem("answers", JSON.stringify(answers));
@@ -1372,6 +1387,7 @@ window.scrollTo({
 
 }
 let shuffleMode = false;
+let reviewWrongMode = false;
 
 function toggleShuffle(btn){
 
@@ -1385,6 +1401,20 @@ function toggleShuffle(btn){
     buildQuizHTML();
 }
 
+function reviewWrongQuestions(){
+
+    reviewWrongMode = !reviewWrongMode;
+
+    document.querySelector(
+        'button[onclick="reviewWrongQuestions()"]'
+    ).innerText =
+    reviewWrongMode
+    ? "📚 Tất cả câu"
+    : "❌ Ôn câu sai";
+
+    buildQuizHTML();
+
+}
 
 function createExam(){
 
