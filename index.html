@@ -482,6 +482,9 @@ Xáo Trộn: OFF
     <button class="btn" onclick="reloadQuiz()">
         Làm Lại
     </button>
+<button class="btn gray" onclick="changeSubject()">
+📚 Đổi Môn
+</button>
 
    <button class="btn" onclick="toggleMusic()" id="zingBtn">
     🎵 Bật Nhạc All Thiết Bị 
@@ -945,6 +948,15 @@ document.getElementById(
 ).style.display = "none";
 
 loadQuestionFiles();
+
+}
+function changeSubject(){
+
+    localStorage.removeItem("currentSubject");
+
+    currentSubject = "";
+
+    document.getElementById("subjectSelect").style.display = "flex";
 
 }
 
