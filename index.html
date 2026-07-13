@@ -308,9 +308,7 @@ document.getElementById(
 <button class="btn gray" id="tabEXAM" onclick="switchTab('EXAM')">
 📝 Thi Thử
 </button>
-<button class="btn gray" id="tabRANK" onclick="switchTab('RANK')">
-🏆 BXH
-</button>
+
 
 </div>
 
@@ -368,22 +366,7 @@ flex-wrap:wrap;
 </div>
 
 </div>
-<div id="rankBox" style="
-display:none;
-background:rgba(255,255,255,.92);
-padding:20px;
-border-radius:20px;
-box-shadow:0 4px 15px rgba(0,0,0,.12);
-margin-bottom:20px;
-">
 
-<h2 style="margin-bottom:20px">
-🏆 Bảng Xếp Hạng Top 100
-</h2>
-
-<div id="rankList"></div>
-
-</div>
 
 <div class="topbar">
 
@@ -578,41 +561,6 @@ class="btn"
 onclick="finishExam()">
 
 Nộp Bài
-
-</button>
-
-</div>
-
-</div>
-<div id="examNamePopup" class="popup">
-
-<div class="popup-box">
-
-<div class="popup-icon">
-🏆
-</div>
-
-<h2>Bắt đầu thi</h2>
-
-<input
-id="examName"
-type="text"
-placeholder="Nhập tên..."
-style="
-width:100%;
-padding:14px;
-font-size:17px;
-border-radius:12px;
-border:2px solid #ddd;
-margin:18px 0;
-outline:none;
-">
-
-<button
-class="popup-btn ok"
-onclick="startExamWithName()">
-
-Bắt đầu thi
 
 </button>
 
@@ -852,8 +800,6 @@ let examSeconds = 2700;
 let examInterval = null;
 let answeredExam = 0;
 let examFinished = false;
-let playerName =
-localStorage.getItem("playerName") || "";
 let examMode = false;
 
 let currentTab = "DN";
@@ -980,44 +926,20 @@ document.getElementById("tabDN").classList.remove("activeTab");
 document.getElementById("tabDS").classList.remove("activeTab");
 document.getElementById("tabNOTE").classList.remove("activeTab");
 document.getElementById("tabEXAM").classList.remove("activeTab");
-document.getElementById("tabRANK").classList.remove("activeTab");
 
 document.getElementById("tabDN").classList.add("gray");
 document.getElementById("tabDS").classList.add("gray");
 document.getElementById("tabNOTE").classList.add("gray");
 document.getElementById("tabEXAM").classList.add("gray");
-document.getElementById("tabRANK").classList.add("gray");
     
 document.getElementById("tab"+type).classList.add("activeTab");
 document.getElementById("tab"+type).classList.remove("gray");
 
 if(type==="EXAM"){
 
-if(examQuestions.length>0){
+    createExam();
 
-currentTab="EXAM";
-
-document.getElementById("quiz-container").style.display="block";
-
-document.getElementById("noteBox").style.display="none";
-
-document.getElementById("rankBox").style.display="none";
-
-document.getElementById("examTop").style.display="block";
-
-buildQuizHTML();
-
-buildNavPanel();
-
-return;
-
-}
-
-document.getElementById("examName").value=playerName;
-
-document.getElementById("examNamePopup").style.display="flex";
-
-return;
+    startExam();
 
 }
     
@@ -1032,10 +954,7 @@ if(type === "NOTE"){
 }
 
 document.getElementById("quiz-container").style.display="block";
-
 document.getElementById("noteBox").style.display="none";
-
-document.getElementById("rankBox").style.display="none";
 
 if(type!="EXAM"){
 
@@ -1048,21 +967,7 @@ examInterval
 );
 
 }
-    if(type=="RANK"){
-
-document.getElementById("quiz-container").style.display="none";
-
-document.getElementById("noteBox").style.display="none";
-
-document.getElementById("examTop").style.display="none";
-
-document.getElementById("rankBox").style.display="block";
-
-loadLeaderboard();
-
-return;
-
-}
+    
 buildQuizHTML();
 
 buildNavPanel();
@@ -1189,12 +1094,7 @@ function buildQuizHTML(){
 
     container.innerHTML="";
 
-    if(currentTab!="EXAM"){
-
-correctCount=0;
-document.getElementById("correctAnswer").innerText=0;
-
-}
+    correctCount=0;
 
     document.getElementById("correctAnswer").innerText=0;
 
@@ -1579,311 +1479,24 @@ const score =
 (
 correct/total*10
 ).toFixed(2);
-await saveLeaderboard(
 
-Number(score),
-
-correct,
-
-2700-examSeconds
-
-);
-const result =
-await getMyRank();
 await showPopup(
+"🎉 Kết quả",
 
-"🏆 Hoàn Thành",
-
-`👤 ${playerName}
-
-🏅 Hạng: #${result.rank}
-
-📊 Điểm: ${score}/10
+`Điểm: ${score}/10
 
 ✅ Đúng: ${correct}
 
 ❌ Sai: ${wrong}
 
-⏱ Thời gian:
+⏳ Chưa làm: ${todo}`,
 
-${Math.floor((2700-examSeconds)/60)} phút
-
-${(2700-examSeconds)%60} giây`,
-
-"🥇"
-
+"🏆"
 );
-
-
 
 showAllAnswers();
 
-}
-async function saveLeaderboard(score,correct,time){
-
-const id = getDeviceId();
-
-const ref = db.ref("leaderboard/"+id);
-
-const snap = await ref.once("value");
-
-const old = snap.val();
-
-const data={
-
-name:playerName,
-
-score:score,
-
-correct:correct,
-
-time:time,
-
-timestamp:Date.now()
-
-};
-
-if(!old){
-
-await ref.set(data);
-
-return;
-
-}
-
-if(
-
-score>old.score ||
-
-(score==old.score && time<old.time)
-
-){
-
-await ref.set(data);
-
-}
-
-}
-async function getLeaderboard(){
-
-const snap = await db.ref("leaderboard").once("value");
-
-let arr=[];
-
-snap.forEach(item=>{
-
-arr.push({
-
-id:item.key,
-
-...item.val()
-
-});
-
-});
-
-arr.sort((a,b)=>{
-
-if(b.score!=a.score){
-
-return b.score-a.score;
-
-}
-
-return a.time-b.time;
-
-});
-
-return arr.slice(0,100);
-
-}
-async function getMyRank(){
-
-const list = await getLeaderboard();
-
-const myId = getDeviceId();
-
-let rank = -1;
-
-for(let i=0;i<list.length;i++){
-
-if(list[i].id==myId){
-
-rank=i+1;
-
-break;
-
-}
-
-}
-
-return {
-
-rank,
-
-list
-
-};
-
-}
-
-async function loadLeaderboard(){
-
-const list = await getLeaderboard();
-
-let html="";
-
-if(list.length==0){
-
-document.getElementById("rankList").innerHTML=
-"<h3 style='text-align:center'>Chưa có dữ liệu.</h3>";
-
-return;
-
-}
-
-if(list.length>=3){
-
-html+=`
-
-<div style="
-display:flex;
-justify-content:center;
-align-items:flex-end;
-gap:15px;
-margin-bottom:30px;
-">
-
-<div style="
-width:90px;
-background:#d1d5db;
-border-radius:15px 15px 0 0;
-padding:15px;
-height:140px;
-text-align:center;
-">
-
-<div style="font-size:35px">🥈</div>
-
-<div style="font-weight:bold">
-${list[1].name}
-</div>
-
-<div>${list[1].score}</div>
-
-</div>
-
-<div style="
-width:100px;
-background:#facc15;
-border-radius:15px 15px 0 0;
-padding:15px;
-height:180px;
-text-align:center;
-">
-
-<div style="font-size:45px">🥇</div>
-
-<div style="font-weight:bold">
-${list[0].name}
-</div>
-
-<div>${list[0].score}</div>
-
-</div>
-
-<div style="
-width:90px;
-background:#d97706;
-color:white;
-border-radius:15px 15px 0 0;
-padding:15px;
-height:120px;
-text-align:center;
-">
-
-<div style="font-size:35px">🥉</div>
-
-<div style="font-weight:bold">
-${list[2].name}
-</div>
-
-<div>${list[2].score}</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-list.forEach((x,i)=>{
-
-if(i<3) return;
-
-let medal=(i+1)+".";
-
-html+=`
-...
-`;
-});
-
-let medal="";
-
-if(i==0) medal="🥇";
-
-else if(i==1) medal="🥈";
-
-else if(i==2) medal="🥉";
-
-medal=(i+4)+".";
-
-html+=`
-
-<div class="rankItem">
-
-<div class="rankLeft">
-
-<div class="rankMedal">
-
-${medal}
-
-</div>
-
-<div>
-
-<div class="rankName">
-
-${x.name}
-
-</div>
-
-<div class="rankTime">
-
-⏱ ${Math.floor(x.time/60)}:${String(x.time%60).padStart(2,"0")}
-
-</div>
-
-</div>
-
-</div>
-
-<div class="rankScore">
-
-${x.score}
-
-</div>
-
-</div>
-
-`;
-
-});
-
-document.getElementById(
-"rankList"
-).innerHTML=html;
+showAllAnswers();
 
 }
     function showAllAnswers(){
@@ -2206,46 +1819,6 @@ window.onload=function(){
     loadQuestionFiles();
 
 };
-
-function startExamWithName(){
-
-const name =
-document
-.getElementById("examName")
-.value
-.trim();
-
-if(name==""){
-
-alert("Nhập tên.");
-
-return;
-
-}
-
-playerName=name;
-
-localStorage.setItem(
-"playerName",
-name
-);
-
-document
-.getElementById(
-"examNamePopup"
-).style.display="none";
-
-currentTab="EXAM";
-
-createExam();
-
-buildQuizHTML();
-
-buildNavPanel();
-
-startExam();
-
-}
 
 </script>
 
@@ -3034,73 +2607,6 @@ opacity:1;
 from{opacity:0;}
 
 to{opacity:1;}
-
-}
-.rankItem{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:15px;
-
-margin-bottom:12px;
-
-border-radius:16px;
-
-background:#f8fafc;
-
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-
-}
-
-.rankLeft{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-}
-
-.rankMedal{
-
-font-size:30px;
-
-width:45px;
-
-text-align:center;
-
-}
-
-.rankName{
-
-font-size:18px;
-
-font-weight:bold;
-
-}
-
-.rankTime{
-
-font-size:13px;
-
-color:#666;
-
-margin-top:4px;
-
-}
-
-.rankScore{
-
-font-size:24px;
-
-font-weight:bold;
-
-color:#2563eb;
 
 }
 </style>
