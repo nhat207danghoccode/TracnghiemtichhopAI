@@ -993,11 +993,29 @@ document.getElementById("tab"+type).classList.remove("gray");
 
 if(type==="EXAM"){
 
-document.getElementById("examName").value =
-playerName;
+if(examQuestions.length>0){
 
-document.getElementById("examNamePopup").style.display =
-"flex";
+currentTab="EXAM";
+
+document.getElementById("quiz-container").style.display="block";
+
+document.getElementById("noteBox").style.display="none";
+
+document.getElementById("rankBox").style.display="none";
+
+document.getElementById("examTop").style.display="block";
+
+buildQuizHTML();
+
+buildNavPanel();
+
+return;
+
+}
+
+document.getElementById("examName").value=playerName;
+
+document.getElementById("examNamePopup").style.display="flex";
 
 return;
 
@@ -1171,7 +1189,12 @@ function buildQuizHTML(){
 
     container.innerHTML="";
 
-    correctCount=0;
+    if(currentTab!="EXAM"){
+
+correctCount=0;
+document.getElementById("correctAnswer").innerText=0;
+
+}
 
     document.getElementById("correctAnswer").innerText=0;
 
@@ -1591,7 +1614,7 @@ ${(2700-examSeconds)%60} giây`,
 
 );
 
-showAllAnswers();
+
 
 showAllAnswers();
 
@@ -1706,10 +1729,18 @@ list
 
 async function loadLeaderboard(){
 
-const list =
-await getLeaderboard();
+const list = await getLeaderboard();
 
 let html="";
+
+if(list.length==0){
+
+document.getElementById("rankList").innerHTML=
+"<h3 style='text-align:center'>Chưa có dữ liệu.</h3>";
+
+return;
+
+}
 
 if(list.length>=3){
 
@@ -1787,7 +1818,16 @@ ${list[2].name}
 
 }
 
-list.slice(3).forEach((x,i)=>{
+list.forEach((x,i)=>{
+
+if(i<3) return;
+
+let medal=(i+1)+".";
+
+html+=`
+...
+`;
+});
 
 let medal="";
 
