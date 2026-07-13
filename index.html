@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> Auto Update - @Nhat2007</title>
+<title>Trắc Nghiệm By Nhật Auto Update - @Nhat2007</title>
 
 <style>
 
@@ -191,6 +191,72 @@ body{
 </head>
 
 <body>
+
+<div id="subjectSelect" style="
+position:fixed;
+inset:0;
+background:rgba(15,23,42,.92);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999999999;
+">
+
+<div style="
+width:380px;
+max-width:92%;
+background:white;
+border-radius:24px;
+padding:35px;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+">
+
+<h1 style="
+margin-bottom:10px;
+color:#111827;
+">
+📚 Trắc Nghiệm By Nhật
+</h1>
+
+<p style="
+color:#666;
+margin-bottom:30px;
+">
+Vui lòng chọn môn học
+</p>
+
+<button
+class="btn"
+style="
+width:100%;
+margin-bottom:15px;
+font-size:18px;
+padding:16px;
+"
+onclick="chooseSubject('GPSL')">
+
+📘 Môn GPSL
+
+</button>
+
+<button
+class="btn"
+style="
+width:100%;
+font-size:18px;
+padding:16px;
+background:#16a34a;
+"
+onclick="chooseSubject('DDCS')">
+
+📗 Môn ĐDCS
+
+</button>
+
+</div>
+
+</div>
 
 <div id="warningBox" style="
 position:fixed;
@@ -791,6 +857,34 @@ async function checkDevice(){
 
 checkDevice();
 
+
+let currentSubject = "";
+
+const SUBJECTS = {
+
+GPSL:{
+
+name:"GPSL",
+
+dn:"DN.txt",
+
+ds:"DS.txt"
+
+},
+
+DDCS:{
+
+name:"ĐDCS",
+
+dn:"DN1.txt",
+
+ds:"DS1.txt"
+
+}
+
+};
+
+
     
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
@@ -837,17 +931,39 @@ function toggleMusic(){
 
 }
 
+function chooseSubject(subject){
+
+currentSubject = subject;
+
+localStorage.setItem(
+"currentSubject",
+subject
+);
+
+document.getElementById(
+"subjectSelect"
+).style.display = "none";
+
+loadQuestionFiles();
+
+}
+
 async function loadQuestionFiles(){
 
     try{
 
-        const dn=await fetch("DN.txt").then(r=>r.text());
+        const subject = SUBJECTS[currentSubject];
 
-        const ds=await fetch("DS.txt").then(r=>r.text());
+        const dn = await fetch(subject.dn).then(r=>r.text());
 
-        parsedQuestionsDN=parseRawText(dn);
+        const ds = await fetch(subject.ds).then(r=>r.text());
 
-        parsedQuestionsDS=parseRawText(ds);
+        parsedQuestionsDN = parseRawText(dn);
+
+        parsedQuestionsDS = parseRawText(ds);
+
+        document.querySelector(".header h1").innerText =
+        "Môn " + subject.name + " - @Nhat2007";
 
         switchTab("DN");
 
@@ -855,7 +971,14 @@ async function loadQuestionFiles(){
 
     catch(err){
 
-        alert("Không tìm thấy DN.txt hoặc DS.txt");
+        alert(
+        "Không tìm thấy " +
+        SUBJECTS[currentSubject].dn +
+        " hoặc " +
+        SUBJECTS[currentSubject].ds
+        );
+
+        console.log(err);
 
     }
 
@@ -1816,7 +1939,20 @@ updateNavColors()
     
 window.onload=function(){
 
-    loadQuestionFiles();
+    const savedSubject =
+    localStorage.getItem("currentSubject");
+
+    if(savedSubject){
+
+        currentSubject = savedSubject;
+
+        document.getElementById(
+        "subjectSelect"
+        ).style.display="none";
+
+        loadQuestionFiles();
+
+    }
 
 };
 
