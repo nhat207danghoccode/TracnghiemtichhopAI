@@ -732,8 +732,8 @@ D. ĐM vị mạc nối trái và ĐM vị mạc nối phải.
 24. Vòng ĐM bờ cong vị lớn được tạo bởi:
 A. ĐM vị trái và ĐM vị mạc nối phải.
 B. ĐM vị phải và ĐM vị mạc nối trái.
-*C. ĐM vị trái và ĐM vị phải.
-D. ĐM vị mạc nối trái và ĐM vị mạc nối phải.
+C. ĐM vị trái và ĐM vị phải.
+*D. ĐM vị mạc nối trái và ĐM vị mạc nối phải.
 
 25. Dạ dày có nhiệm vụ:
 *A. Dự trữ thức ăn.
