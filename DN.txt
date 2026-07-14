@@ -1669,7 +1669,7 @@ D. Kích thích cơ ruột non co bóp
 E. Tăng cường tiêu hoá thức ăn
 
 38. Thành phần quan trọng nhất của dịch vị là:
-A. Pepsin
+*A. Pepsin
 B. Lipaza
 C. Nước
 D. Muối khoáng
