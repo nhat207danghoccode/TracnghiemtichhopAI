@@ -217,8 +217,8 @@ B. Sai
 📄 TRANG 5 - TIẾP PHẦN TIÊU HÓA
 
 3. Tuyến tiêu hóa gồm ống tiêu hóa và các tuyến phụ thuộc.
-A. Đúng
-*B. Sai
+*A. Đúng
+B. Sai
 
 4. Lớp cơ ở phần lớn ống tiêu hóa: trong là cơ vòng, ngoài là cơ dọc.
 *A. Đúng
