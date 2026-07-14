@@ -162,9 +162,9 @@ D. Trung thất sau
 
 7. Trục của tim có hướng.
 A. Từ trên xuống dưới sang trái và ra sau
-*B. Từ trên xuống dưới sang phải và ra trước
+B. Từ trên xuống dưới sang phải và ra trước
 C. Từ trên xuống dưới sang phải và ra sau
-D. Từ trên xuống dưới sang trái và ra trước
+*D. Từ trên xuống dưới sang trái và ra trước
 
 8. Đáy tim:
 A. Nằm ở phía trên, nhìn sang trái ra sau
