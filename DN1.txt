@@ -246,11 +246,217 @@ C. Giám sát dựa vào kết quả phân lập vi khuẩn
 D. Nghiên cứu tiến cứu
 
 
-266. Phương pháp nào khó xác định khi sử dụng ở Việt Nam do tính hình lạm dụng kháng sinh hiện nay?
+
+
+
+266. Phương pháp nào khó chính xác khi sử dụng ở Việt Nam do tình hình lạm dụng kháng sinh hiện nay?
 A. Giám sát dựa vào thể chăm sóc
 *B. Giám sát dựa vào danh sách bệnh nhân sử dụng kháng sinh
-C. Giám sát đưa dựa vào kết quả lập vi khuẩn
+C. Giám sát dựa vào kết quả lập vi khuẩn
 D. Nghiên cứu tiến cứu
 
+267. Hình thức giám sát không khuyến cáo sử dụng, trừ trường hợp cần dữ liệu về tình hình nhiễm khuẩn trước đây:
+A. Giám sát dựa vào kết quả phân lập vi khuẩn
+*B. Giám sát hồ sơ bệnh án
+C. Giám sát dựa phát hiện chùm ca bệnh
+D. Giám sát dựa vào thể chăm sóc
+
+268. Mục đích chung của giám sát nhiễm khuẩn bệnh viện là:
+A. Xác định bùng nổ nhiễm khuẩn bệnh viện
+B. Góp phần xây dựng mạng lưới giám sát dịch tễ các nhiễm khuẩn bệnh
+C. Xây dựng và điều chỉnh các chuẩn mực về quản lý công tác KSNK bệnh viện
+*D. Hạ thấp tỉ lệ mắc nhiễm khuẩn bệnh viện và số tử vong do ảnh hưởng NKBV
+
+269. Hình thức nào thường không chính xác (do bác sĩ quá bận không thu thập dữ liệu theo đúng tiêu chuẩn chẩn đoán, không có chính sách rõ ràng để khích lệ họ báo cáo).
+A. Giám sát tỷ lệ bệnh hiện mắc theo giai đoạn
+B. Giám sát tỷ lệ bệnh nhân mắc mới
+*C. Giám sát thụ động sử dụng phiếu thông báo
+D. Giám sát có trọng điểm
+
+270. Phương pháp nào chỉ cho ta một bức tranh phác thảo về tình hình NKBV, không nêu được khuynh hướng diễn biến bệnh, do đó không triển khai kịp thời các biện pháp kiểm soát?
+*A. Giám sát tỷ lệ bệnh hiện mắc theo giai đoạn
+B. Giám sát tỷ lệ bệnh mắc mới
+C. Giám sát thụ động sử dụng phiếu thông báo
+D. Giám sát có trọng điểm
+
+271. Khử khuẩn là:
+A. Quá trình tiêu diệt hoàn toàn vi sinh vật gây bệnh trên dụng cụ hoặc trên d Quá trình khử khuẩn không tiêu diệt được tế bào vi khuẩn
+B. Quá trình làm giảm tối thiểu số lượng vi sinh vật gây bệnh trên dụng cụ hoặc trên da tới mức không gây nguy hiểm tới sức khoẻ Quá trình khử khuẩn tiêu diệt được bào tử của vi khuẩn
+*C. Quá trình tiêu diệt làm giảm tối thiểu số lượng vi sinh vật gây bệnh trên dụng cụ hoặc trên da tới mức không gây nguy hiểm tới sức khoẻ Quá trình khử khuẩn không tiêu diệt được bào tử của vi khuẩn
+D. Quá trình tiêu diệt hoàn toàn vi sinh vật gây bệnh trên dụng cụ hoặc trên da Quá trình khử khuẩn tiêu diệt được bào tử vi khuẩn
+
+272. Nguyên cơ nhiễm khuẩn được phân thành
+A. 2 mức độ
+*B. 3 mức độ
+C. 4 mức độ
+D. 5 mức độ
+
+273. Nguy cơ nhiễm khuẩn trung bình là:
+A. Những dụng cụ tiếp xúc với da nguyên vẹn
+*B. Những dụng cụ tiếp xúc với niêm mạc và da không nguyên vẹn
+C. Những dụng cụ đi vào các mô cơ thể vô khuẩn
+D. Những dụng cụ vào hệ thống mạch máu
+
+274. Làm sạch là:
+*A. Động tác phải luôn luôn đi trước việc khử khuẩn hoặc tiệt khuẩn
+B. Động tác nên làm đối với dụng cụ bị dính máu
+C. Động tác không cần thiết trước khi khử khuẩn hoặc tiệt khuẩn
+D. Động tác chỉ làm đối với những dụng cụ cần khử khuẩn
+
+275. Phương pháp khử khuẩn hơi nước nóng là
+A. 60-80°C
+B. 70-800°C
+C. 80-900°C
+*D. 80-1000°C
+
+276. Để tiệt khuẩn bằng phương pháp hấp ướt cần duy trì ở nhiệt độ bao nhiêu trong 15 phút.
+A. 100°C
+B. 1100°C
+*C. 1200°C
+D. 1300°C
+
+277. Ưu điểm nào sau đây không phải là ưu điểm của hấp ướt:
+A. Là phương pháp sử dụng rộng rãi, đáng tin cậy
+B. Không gây độc, ít tốn kém
+C. Hấp thụ nhiệt nhanh và có khả năng thâm nhập qua các lớp vải
+*D. Tiệt khuẩn được các loại dụng cũ có dầu mỡ
+
+278. Phương pháp sấy khô duy trì nhiệt độ
+A. 160-1700°C/ 1-2 giờ
+*B. 160-1800°C/1-2 giờ
+C. 160-1700°C/ 2-3 giờ
+D. 160-1800°C/ 2-3 giờ
+
+279. Yếu tố nào sau đây không ảnh hưởng đến tác dụng của chất sát khuẩn hóa học.
+A. Nồng độ hóa chất
+B. Thời gian tác dụng không đủ
+C. Mật độ vi sinh vật tồn tại trên dụng cụ
+*D. Nhiệt độ
+
+280. Dụng cụ nào sau đây có nguy cơ nhiễm khuẩn cao.
+A. Ống nội soi
+B. Huyết áp
+*C. Dụng cụ trong ngoại khoa
+D. Nhiệt kế
+
+281. Nhược điểm của phương pháp khử khuẩn bằng tia cực tím.
+A. Có thể ăn mòn da, niêm mạc và gây độc cho tế bào thần kinh
+B. Có thể gây dị ứng, gây xót da
+C. Dễ làm hỏng dụng cụ
+*D. Có thể gây viêm kết mạc, viêm giác mạc
+
+282. Nhược điểm của phương pháp sấy khô
+A. Không khử khuẩn được những dụng cụ có bám dầu, mỡ
+B. Có thể gây dị ứng, gây xót da
+*C. Dễ làm hỏng dụng cụ
+D. Có thể gây viêm kết mạc, viêm giác mạc
+
+283. Nhược điểm của phương pháp khử khuẩn bằng phenol và dẫn chất của nó.
+*A. Có thể ăn mòn da, niêm mạc và gây độc cho tế bào thần kinh
+B. Có thể gây dị ứng, gây xót da
+C. Dễ làm hỏng dụng cụ
+D. Có thể gây viêm kết mạc, viêm giác mạc
+
+284. Dung dịch Microshield duy trì tác dụng diệt khuẩn trong thời gian
+A. 2 giờ
+B. 4 giờ
+*C. 6 giờ
+D. 8 giờ
+
+285. Dung dịch Cidex diệt được tất cả các loại vi khuẩn kể cả bào tử trong vòng:
+A. 4 giờ
+B. 6 giờ
+C. 8 giờ
+*D. 10 giờ
+
+286. Ưu điểm lớn nhất của dung dịch Cidex là:
+*A. Không bị bất hoạt bởi chất hữu cơ, không ăn mòn, an toàn cho mọi loại dụng cụ
+B. Là phương pháp sử dụng rộng rãi, không gây độc, ít tốn kém
+C. Có thể áp dụng cho các dụng cụ bị phá hủy bởi nhiệt ướt
+D. Có khả năng thấm qua da kể cả lỗ chân lông và tuyến mồ hôi
+
+287. Mục đích nào sau đây không phải là mục đích xử lý dụng cụ:
+A. Làm giảm nguy cơ nhiễm khuẩn bệnh việm
+B. Đảm bảo an toàn cho nhân viên y tế khi tiếp xúc với dụng cụ
+C. Đảm bảo duy trì độ bền dụng cụ
+*D. Tiết kiệm được công sức
+
+288. Quy trình xử lý dụng cụ chịu nhiệt có mấy bước?
+A. 5 bước
+*B. 6 bước
+C. 7 bước
+D. 8 bước
+
+289. Dụng cụ không chịu nhiệt sau khi xử lý được bảo quản trong thời gian:
+*A. 8 ngày
+B. 9 ngày
+C. 10 ngày
+D. 11 ngày
+
+290. Nếu dụng cụ không chịu nhiệt đã bảo quản quá  ngày quy định thì xử lý lại từ bước thứ mấy ?
+A. 3
+B. 4
+*C.5 
+D. 6
+
+291. Quy trình xử lý dụng cụ chịu nhiệt và không chịu nhiệt khác nhau ở những bước nào?
+A. 3 và 4
+*B. 4 và 5
+C. 4 và 6
+D. 5 và 6
+
+292. Khử khuẩn hay tiệt khuẩn thuộc bước thứ mấy của quy trình xử lý dụng cụ chịu nhiệt?
+A. 1
+B. 3
+*C. 5
+D. 6
+
+293. Cọ rửa dụng cụ là bước thứ mấy của quy trình xử lý dụng cụ? 
+*A. 3
+B. 4
+C. 5
+D. 6
+
+294. Ngâm dụng cụ trong dung dịch khử khuẩn ban đầu trong thời gian:
+A. 10-25 phút
+*B. 10-35 phút
+C. 10-45 phút
+D. 10-55 phút
+
+295. Biện pháp cách ly không được xây dựng trên cơ sở nào sau đây?
+A. Bản chất truyền nhiễm của tác nhân
+B. Mức độ gây bệnh của tác nhân
+*C. Tính chất cơ bản của bệnh nhân và nhân viên y tế cần được bảo vệ
+D. Điều kiện cơ sở vật chất của bệnh viện
+
+296. Chỉ định nào không có trong cách ly nhiễm khuẩn
+A. Khi bệnh nhân bị nhiễm khuẩn có bản chất lây truyền 
+*B. Khi bệnh nhân suy giảm miễn dịch
+C. Khi bệnh nhân bị nhiễm một tác nhân thông thường không gây truyền nhiễm nhưng nghi ngờ có khả năng phát tán trong môi trường bệnh viện và có thể truyền nhiễm cho bệnh nhân khác
+D. Khi bệnh nhân mang một tác nhân vi khuẩn đa thuốc kháng sinh và biết rõ nguy cơ truyền thành dịch những vi khuẩn này
+
+297. Phòng ngừa chuẩn là:
+*A. Phòng ngừa nhiễm khuẩn cơ bản áp dụng cho mọi bênh nhân bất kể chẩn đoán hay thời điểm chăm sóc
+B. Phòng ngừa khi tiếp xúc với người bệnh
+C. Phòng ngừa khi chăm sóc người bệnh mắc bệnh truyền nhiễm
+D. Phòng ngừa khi người nhân viên y tế mắc bệnh truyền nhiễm
+
+298. Cách ly bảo vệ là:
+A. Tránh sự lây truyền tác nhân gây nhiễm khuẩn được xác định rõ hoặc có khả năng gây nhiễm khuẩn ở những bệnh nhân bị nhiễm khuẩn, hoặc những bệnh nhân mang nguồn bệnh đã được xác định
+*B. Tránh sự lây truyền của tất cả các tác nhân nhiễm khuẩn tiềm tàng cho những bệnh nhân suy giảm miễn dịch
+C. Tránh sự lây truyền tác nhân gây bệnh ra ngoài cộng đồng
+D. Tránh sự lây truyền thêm tác nhân gây bệnh đối với những bệnh nhân đang mắc nguồn bệnh
+
+299. Cách ly nhiễm khuẩn không chỉ định cho loại nhiễm khuẩn nào sau đây?
+A. Khi bệnh nhân bị nhiễm khuẩn có bản chất lây nhiễm
+B. Khi bệnh nhân bị nhiễm khuẩn một tác nhân thông thường không có gây truyền nhiễm nhưng nghi ngờ có khả năng pháp tán trong môi trường bệnh viện và có thể truyền tới bệnh nhân khác
+C. Khi bệnh nhân mang hoặc bài tiết một tác nhân vi khuẩn đa kháng thuốc kháng sinh và biết rõ nguy cơ truyền thành dịch những vi khuẩn này
+*D. Khi những bệnh nhân non, yếu hoặc suy giảm miễn dịch, bệnh nhân bõng diện rộng
+
+300. Mục đích chính của phòng ngừa chuẩn là:
+A. Giảm thiểu lây truyền nhiễm khuẩn cho nhân viên y tế
+B. Giảm thiểu lây truyền nhiễm khuẩn cho người bệnh
+C. Giảm thiểu lây truyền nhiễm khuẩn cho cộng đồng
+*D. Giảm thiểu lây truyền nhiễm khuẩn cho người bệnh y tế và người bệnh
 
 
