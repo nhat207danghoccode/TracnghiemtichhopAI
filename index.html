@@ -365,6 +365,14 @@ document.getElementById(
     Câu Hỏi Đúng Sai
 </button>
 
+<button class="btn gray" id="tabKT" onclick="switchTab('KT')">
+📖 Bài Kiểm Tra Thế Kỉ Trước
+</button>
+
+<button class="btn gray" id="tabKSNK" onclick="switchTab('KSNK')">
+🦠 Phần Kiểm Soát Nhiễm Khuẩn
+</button>
+
 <button class="btn gray" id="tabNOTE" onclick="switchTab('NOTE')">
     📒 Ghi Chú
 </button>
@@ -888,6 +896,8 @@ ds:"DS1.txt"
     
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
+let parsedQuestionsKT = [];
+let parsedQuestionsKSNK = [];
 let examQuestions = [];
 let examSeconds = 2700;
 
@@ -934,6 +944,17 @@ function toggleMusic(){
 function chooseSubject(subject){
 
 currentSubject = subject;
+if(subject=="DDCS"){
+
+document.getElementById("tabKT").style.display="inline-block";
+document.getElementById("tabKSNK").style.display="inline-block";
+
+}else{
+
+document.getElementById("tabKT").style.display="none";
+document.getElementById("tabKSNK").style.display="none";
+
+}
 
 localStorage.setItem(
 "currentSubject",
@@ -965,12 +986,25 @@ async function loadQuestionFiles(){
 
         const dn = await fetch(subject.dn).then(r=>r.text());
 
-        const ds = await fetch(subject.ds).then(r=>r.text());
+const ds = await fetch(subject.ds).then(r=>r.text());
 
-        parsedQuestionsDN = parseRawText(dn);
+parsedQuestionsKT = [];
+parsedQuestionsKSNK = [];
 
-        parsedQuestionsDS = parseRawText(ds);
+if(currentSubject=="DDCS"){
 
+const kt = await fetch("KT.txt").then(r=>r.text());
+
+const ksnk = await fetch("KSNK.txt").then(r=>r.text());
+
+parsedQuestionsKT = parseRawText(kt);
+
+parsedQuestionsKSNK = parseRawText(ksnk);
+
+}
+parsedQuestionsDN = parseRawText(dn);
+
+parsedQuestionsDS = parseRawText(ds);
         document.querySelector(".header h1").innerText =
         "Môn " + subject.name + " - @Nhat2007";
 
@@ -1058,11 +1092,15 @@ document.getElementById("tabDN").classList.remove("activeTab");
 document.getElementById("tabDS").classList.remove("activeTab");
 document.getElementById("tabNOTE").classList.remove("activeTab");
 document.getElementById("tabEXAM").classList.remove("activeTab");
+document.getElementById("tabKT").classList.remove("activeTab");
+document.getElementById("tabKSNK").classList.remove("activeTab");
 
 document.getElementById("tabDN").classList.add("gray");
 document.getElementById("tabDS").classList.add("gray");
 document.getElementById("tabNOTE").classList.add("gray");
 document.getElementById("tabEXAM").classList.add("gray");
+document.getElementById("tabKT").classList.add("gray");
+document.getElementById("tabKSNK").classList.add("gray");
     
 document.getElementById("tab"+type).classList.add("activeTab");
 document.getElementById("tab"+type).classList.remove("gray");
@@ -1234,17 +1272,31 @@ let questions;
 
 if(currentTab==="DN"){
 
-    questions=[...parsedQuestionsDN];
+questions=[...parsedQuestionsDN];
 
 }
+
 else if(currentTab==="DS"){
 
-    questions=[...parsedQuestionsDS];
+questions=[...parsedQuestionsDS];
 
 }
+
+else if(currentTab==="KT"){
+
+questions=[...parsedQuestionsKT];
+
+}
+
+else if(currentTab==="KSNK"){
+
+questions=[...parsedQuestionsKSNK];
+
+}
+
 else if(currentTab==="EXAM"){
 
-    questions=[...examQuestions];
+questions=[...examQuestions];
 
 }
 else{
@@ -1954,6 +2006,17 @@ window.onload=function(){
     if(savedSubject){
 
         currentSubject = savedSubject;
+if(savedSubject=="DDCS"){
+
+document.getElementById("tabKT").style.display="inline-block";
+document.getElementById("tabKSNK").style.display="inline-block";
+
+}else{
+
+document.getElementById("tabKT").style.display="none";
+document.getElementById("tabKSNK").style.display="none";
+
+}
 
         document.getElementById(
         "subjectSelect"
