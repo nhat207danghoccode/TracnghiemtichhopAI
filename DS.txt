@@ -1047,8 +1047,8 @@ A. Đúng
 *B. Sai
 
 4. Chức năng của tuyến tiền liệt bài tiết dịch có độ pH acid.
-A. Đúng
-*B. Sai
+*A. Đúng
+B. Sai
 
 5. Trong điều hoà sinh sản tinh trùng: Inhibin làm tăng sản sinh tinh trùng.
 A. Đúng
