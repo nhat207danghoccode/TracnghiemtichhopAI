@@ -1,1 +1,247 @@
-1.Thời Gian Học còn chả có đòi có đề ĐDCS
+DANH SÁCH CÂU HỎI 226 - 299
+226. Nhiễm khuẩn bệnh viện thường xuất hiện sau thời gian nhập viện bao lâu:
+
+A. Sau 24 giờ
+*B. Sau 48 giờ
+C. Sau 46 giờ
+D. Sau 72 giờ
+
+227. Triệu chứng lâm sàng của nhiễm khuẩn huyết là:
+
+A. Huyết áp tối đa < 80mmHg, mạch nhanh và vô niệu
+*B. Huyết áp hạ, mạch nhanh và ít tiểu
+C. Huyết áp giao động, mạch thay đổi, thiểu niệu
+D. Truỵ tim mạch, vô niệu
+
+228. Triệu chứng lâm sàng có trong các tiêu chuẩn chẩn đoán viêm phổi bệnh viện:
+
+*A. Đờm mủ hay thay đổi tính chất đờm
+B. Ho nhiều
+C. Khó thở, nhịp thở nhanh
+D. Sốt cao liên tục
+
+229. Triệu chứng nào không có trong các triệu chứng lâm sàng chẩn đoán nhiễm khuẩn tiêu hóa:
+
+A. Có đau bụng, nôn hay buồn nôn
+B. Tiêu chảy cấp
+*C. Cấy phân (+) hoặc soi phân thấy tác nhân gây bệnh
+D. Đau bụng, nôn và tiêu chảy
+
+230. Nhiễm khuẩn bệnh viện tỷ lệ mắc thấp nhất trong các loại nhiễm khuẩn bệnh viện.
+A. Nhiễm khuẩn đường tiết niệu
+B. Nhiễm khuẩn huyết
+*C. Nhiễm khuẩn qua đường da
+D. Nhiễm khuẩn vết mổ
+
+231. Tỷ lệ tử vong thấp nhất trong các loại nhiễm khuẩn bệnh viện thường gặp.
+A. Nhiễm khuẩn đường tiết niệu
+*B. Nhiễm khuẩn vết bỏng
+C. Nhiễm khuẩn phổi bệnh viện
+D. Nhiễm khuẩn vết mổ
+
+
+232. Nhiễm khuẩn vết mổ là nhiễm khuẩn tại vết mổ trong thời gian từ khi mổ đến … tháng sau mổ nếu có cấy ghép.
+A. 1 tháng
+B. 4 tháng
+C. 8 tháng
+*D. 12 tháng
+
+233. Tiêu chuẩn 1 để chẩn đoán nhiễm trùng tiết niệu có triệu chứng là cấy nước tiểu dương tính và:
+A. Chảy mủ ra từ niệu đạo
+*B. Đái buốt, đau trên xương mu
+C. Có đặt sonde tiểu lưu trong 7 ngày
+D. Rối loạn nước tiểu và sốt
+
+234. Dấu hiệu lâm sàng nào có trong nhiễm trùng vết mổ nông:
+*A. Chảy mủ từ vết mổ
+B. Đau tại vết mổ, cấy phân lập được vi khuẩn tại vết mổ
+C. Sốt và áp xe ở lớp cơ qua chuẩn đoán hình ảnh
+D. Đau tại vết mổ
+
+235. Điều 6 trong chương I các kỹ thuật chuyên môn về KSNK quy định.
+A. Thực hiện các quy định về vô khuẩn
+B. Quản lý và sử dụng đồ vải
+C. Vệ sinh môi trường và quản lý chất thải
+*D. Vệ sinh tay
+
+236. Chương 2 các điều kiện đảm bảo công tác kiểm soát nhiễm khuẩn có mấy điều?
+A. 3 điều
+*B. 4 điều
+C. 5 điều
+D. 7 điều
+
+237. Chủ tịch hội đồng kiểm soát nhiễm khuẩn là:
+A. Trưởng khoa kiểm soát nhiễm khuẩn
+B. Điều dưỡng trưởng khoa kiểm soát nhiễm khuẩn
+C. Trưởng khoa lâm sàng
+*D. Lãnh đạo cơ sở khám chữa bệnh 
+
+238. Nhiệm vụ nào không phải là nhiệm vụ của hội đồng kiểm soát nhiễm khuẩn:
+A. Xem xét, đề xuất, tư vấn cho giám đốc bệnh viện xây dựng, sửa đổi, bổ sung các quy định kĩ thuật chuyên môn về ksnk phù
+B. Tư vấn cho giám đốc về kế hoạch phát triển công tác KSNK hợp với quy định của Bộ Y tế
+*C. Kiểm tra đôn đốc cán bộ, viên chức, nhân viên y tế thực hiện đúng quy định KSNK
+D. Tổ chức huấn luyện, nghiên cứu khoa học, chỉ đạo tuyến tuyên truyền về KSNK trong phạm vi toàn đơn vị quản lý
+
+239. Quản lý giám sát các hoạt động khử khuẩn, tiệt khuẩn giặt là là nhiệm vụ của?
+A. Hội đồng kiểm soát nhiễm khuẩn
+*B. Khoa kiểm soát nhiễm khuẩn
+C. Mạng lưới kiểm soát nhiễm khuẩn
+D. Giám đốc cơ sở khám chữa bệnh
+
+240. Nhiệm vụ nào sau đây không phải là nhiệm vụ của điều dưỡng trưởng khoa KSNK?
+*A. Thực hiện nhiệm vụ chung của điều dưỡng trưởng khoa
+B. Giúp trưởng khoa thực hiện các nhiệm vụ của khoa KSNK
+C. Tham gia xây dựng các quy định, quy trình KSNK và kiểm tra, giám sát việc thực hiện
+D. Lập kế hoạch công tác KSNK trình giám đốc phê duyệt và tổ chức thực hiện
+
+
+241. Trách nhiệm nào sau đây không thuộc trách nhiệm điều dưỡng trưởng khoa trong công tác KSNK?
+A. Kiểm tra đôn đốc thầy thuốc, nhân viên y tế, người bệnh, người nhà người bệnh, học sinh, sinh viên tuân thủ quy định, quy trình KSNK trong chăm sóc và điều trị
+B. Quản lý, hướng dẫn, giám sát sử dụng phương tiện phòng hộ cá nhân, đảm bảo đúng mục đích, đúng đối tượng và đảm bảo hiệu quả KSNK
+*C. Chỉ đạo việc tổ chức huấn luyện, đào tạo, nghiên cứu khoa học, kiểm tra, giám sát thực hiện các công tác KSNK
+D. Phân công điều dưỡng hoặc nữ hộ sinh tham gia mạng lưới KSNK
+
+242. Chương IV - trách nhiệm thực hiện có mấy điều quy định.
+A. 7 điều
+B. 8 điều
+*C. 9 điều
+D. 10 điều
+
+243. Điều 4 trong thông tư 18/2009/TT-BYT quy định gì?
+*A. Thực hiện các biện pháp phòng ngừa  cách ly
+B. Vệ sinh môi trường và quản lý chất thải
+C. Vệ sinh an toàn thực phẩm
+D. Quản lý và sử dụng đồ vải
+
+244. Ngoài nhân lực cho các bộ phận như khử khuẩn, tiệt khuẩn, giặt là, bộ phận giám sát nhiễm khuẩn phải đảm bảo tối thiểu bao nhiêu nhân lực được đào tạo về KSNK / 150 giường bệnh.
+A. 4
+B. 3
+C. 2
+*D. 1
+
+245. Ủy viên của hội đồng kiểm soát nhiễm khuẩn là
+A. Giám đốc bệnh viện
+B. Phó giám đốc bệnh viện
+C. Trưởng khoa kiểm soát nhiễm khuẩn
+*D. Đại diện của các khoa lâm sàng và cận lâm sàng
+
+246. Các cơ sở khám chữa bệnh nào thì cần phải thành lập khoa kiểm soát nhiễm khuẩn?
+*A. Có từ 150 giường bệnh hoặc bệnh viện hạng II
+B. Có dưới 150 giường bệnh
+C. Có từ 170 giường bệnh
+D. Có từ 170 giường bệnh hoặc bệnh viện hạng II
+
+247. Nhiễm khuẩn bệnh viện thường xuất hiện sau thời gian nhập viện bao lâu:
+A. Sau 24 giờ
+*B. Sau 48 giờ
+C. Sau 46 giờ
+D. Sau 72 giờ
+
+248. Một trong số triệu chứng lâm sàng của nhiễm khuẩn huyết là
+A. Huyết áp tối đa < 80mmHg
+*B. Huyết áp tâm thu < 90mmHg
+C. Huyết áp tâm thu < 100mmHg
+D. Huyết áp tâm thu < 110 mmHg
+
+249. Triệu chứng nào không có trong các tiêu chuẩn chẩn đoán viêm phổi bệnh viện:
+A. Đờm mới hay đổi tính chất đờm
+*B. Ho nhiều
+C. Cấy đờm phát hiện vi khuẩn
+D. Phân lập được vi khuẩn qua nước rửa phế quản
+
+250. Triệu chứng nào không có trong các triệu chứng chẩn đoán nhiễm khuẩn tiêu hóa:
+A. Có đau bụng, nôn hay buồn nôn
+B. Tiêu chảy cấp
+C. Cấy phân (+) hoặc có soi phân thấy tác nhân gây bệnh
+*D. Ợ hơi, ợ chua
+
+251. Nhiễm khuẩn bệnh viện nào có tỷ lệ mắc cao nhất trong các loại nhiễm khuẩn bệnh viện.
+A. Nhiễm khuẩn đường tiết niệu
+B. Nhiễm khuẩn huyết
+*C. Nhiễm khuẩn phổi bệnh viện
+D. Nhiễm khuẩn vết mổ
+
+252. Nhiễm khuẩn bệnh viện nào có tỷ lệ tử vong cao nhất trong các loại nhiễm khuẩn bệnh viện thường gặp.
+A. Nhiễm khuẩn đường tiết niệu
+*B. Nhiễm khuẩn huyết
+C. Nhiễm khuẩn phổi bệnh viện
+D. Nhiễm khuẩn vết mổ
+
+253. Nhiễm khuẩn vết mổ là nhiễm khuẩn tại vết mổ trong thời gian từ khi mổ đến 30 ngày sau mổ (không có cấy ghép) và đến bao lâu có cấy ghép.
+A. 6 tháng
+B. 8 tháng
+C. 10 tháng
+*D. 12 tháng
+
+254. Tiêu chuẩn 1 để chẩn đoán nhiễm trùng tiết niệu không triệu chứng là cấy nước tiểu dương tính và:
+A. Có đặt sonde tiểu lưu trong 5 ngày
+B. Có đặt sonde tiểu lưu trong 6 ngày
+*C. Có đặt sonde tiểu lưu trong 7 ngày
+D. Có đặt sonde tiểu lưu trong 8 ngày
+
+255. Dấu hiệu nào không có trong nhiễm trùng vết mổ nông:
+A. Chảy mủ từ vết mổ
+B. Cấy phân lập được vi khuẩn tại vết mổ
+*C. Áp xe ở lớp cơ qua chuẩn đoán hình ảnh hoặc khi phẩu thuật lại
+D. Cần mở bung vết mổ có cấy (-)
+
+256. Thiếu niệu là khi số lượng nước tiểu:
+*A. < 20 ml/ giờ
+B. < 25 ml/ giờ
+C. ≤ 20 ml/ giờ
+D. ≤ 25 ml/ giờ
+
+257. Nhiễm khuẩn nào là nhiễm khuẩn thường gặp trong NKBV và tỷ lệ mắc từ 15% đến 20% tổng số NKBV?
+*A. Nhiễm khuẩn phổi bệnh viện
+B. Nhiễm khuẩn vết mổ
+C. Nhiễm khuẩn tiết niệu
+D. Nhiễm khuẩn tiêu hoá
+
+258. Nhiễm khuẩn nào có chi phí phải chịu chi phí cao nhất chiếm khoảng 18% chi phí chăm sóc điều trị?
+A. Nhiễm khuẩn bệnh viện
+B. Nhiễm khuẩn vết mổ
+C. Nhiễm khuẩn tiết niệu
+*D. Nhiễm khuẩn huyết
+
+259. Giám sát nhiễm khuẩn bệnh viện là một quá trình các dữ liệu sức khoẻ liên tục có hệ thống lập kế hoạch, triển khai, đánh giá thực hành kiểm soát nhiễm khuẩn, đồng thời phổ biến kịp thời các dữ liệu thu thu được tới cho những người cần biết.
+A. Thu thập, phân tích
+*B. Thu thập, phân tích, diễn giải
+C. Phân tích, diễn giải
+D. Thu thập, diễn giải
+
+260. Chương trình giám sát nhiễm khuẩn bệnh viện bao gồm mấy khía cạnh cơ bản?
+A. 2
+*B. 3
+C. 4
+D. 5
+
+261. Nhân lực cần thiết cho giám sát KSNK là
+*A. 01/150 giường bệnh
+B. 02/150 giường bệnh
+C. 03/150 giường bệnh
+D. 04/150 giường bệnh
+
+262. Bác sĩ điều trị báo cáo các trường hợp nhiễm khuẩn bệnh viện, tổ kiểm soát nhiễm khuẩn chỉ tổng hợp và báo cáo số liệu là hình thức giám sát nào?
+A. Giám sát tỷ lệ bệnh hiện mắc theo giai đoạn
+B. Giám sát tỷ lệ bệnh mắc mới
+*C. Giám sát thụ động sử dụng phiếu thông báo
+D. Giám sát có trọng điểm
+
+263. Phương pháp điều trị cắt ngang bệnh cũ và mới ở các khoa khác nhau trong cùng một ngày hay trong một giai đoạn và mỗi giường bệnh được khảo sát một lần là phương pháp giám sát:
+*A. Giám sát tỷ lệ bệnh hiện mắc theo giai đoạn
+B. Giám sát tỷ lệ bệnh  mắc mới
+C. Giám sát thụ động sử dụng phiếu thông báo
+D. Giám sát có trọng điểm
+
+264. Điều tra theo dõi toàn bộ bệnh nhân từ lúc nhập viện đến khi ra viện, qua đó theo dõi được những NKBV lúc mới bắt đầu xuất hiện là hình thức giám sát nào?
+A. Giám sát tỷ lệ bệnh hiện mắc theo giai đoạn
+*B. Giám sát tỷ lệ bệnh mắc mới
+C. Giám sát thụ động sử dụng phiếu thông báo
+D. Giám sát có trọng điểm 
+
+265. Phương pháp nào là phương pháp chính xác nhất, là tiêu chuẩn vàng nhưng đòi hỏi nhiều nhân lực?
+A. Giám sát dựa vào thể chăm sóc
+*B. Giám sát dựa vào danh sách bệnh nhân sử dụng kháng sinh
+C. Giám sát dựa vào kết quả phân lập vi khuẩn
+D. Nghiên cứu tiến cứu
+
