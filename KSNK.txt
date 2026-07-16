@@ -257,9 +257,9 @@ D. Thu gom chất thải ngay khi phát sinh
 
 15. Chất thải y tế nào không được phép tái chế?
 A. Chất thải y tế thông thường phục vụ mục đích tái chế
-*B. Chất thải y tế nguy hại
+B. Chất thải y tế nguy hại
 C. Chất thải sinh hoạt trong cơ sở y tế
-D. Chất thải lây nhiễm
+*D. Chất thải lây nhiễm
 
 16. Chất thải nào sau đây phải được lưu giữ trong các hộp bằng nhựa hoặc vật liệu phù hợp và không được rò rỉ thủy ngân ra ngoài?
 A. Chất thải y tế thông thường
