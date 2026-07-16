@@ -305,15 +305,15 @@ D. Động tác chỉ làm đối với những dụng cụ cần khử khuẩn
 
 275. Phương pháp khử khuẩn hơi nước nóng là phương pháp sử dụng luồng hơi nóng
 A. 60-80°C
-B. 70-800°C
-C. 80-900°C
-*D. 80-1000°C
+B. 70-80°C
+C. 80-90°C
+*D. 80-100°C
 
 276. Để tiệt khuẩn bằng phương pháp hấp ướt cần duy trì ở nhiệt độ bao nhiêu trong 15 phút.
-A. 100°C
-B. 1100°C
-*C. 1200°C
-D. 1300°C
+A. 10°C
+B. 110°C
+*C. 120°C
+D. 130°C
 
 277. Ưu điểm nào sau đây không phải là ưu điểm của hấp ướt:
 A. Là phương pháp sử dụng rộng rãi, đáng tin cậy
