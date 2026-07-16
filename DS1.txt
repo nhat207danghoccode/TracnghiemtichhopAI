@@ -225,8 +225,8 @@ A.Đúng
 *A.Đúng
 B.Sai
 77.Cách ly nhiễm khuẩn được chỉ định khi cần bảo vệ những bệnh nhân sinh non, yếu hoặc suy giảm miễn dịch.
-A.Đúng
-*B.Sai
+*A.Đúng
+B.Sai
 78.Sử dụng phương tiện phòng hộ cá nhân như mang găng, khẩu trang, kính bảo vệ, áo choàng... là một trong những giải pháp chính của phòng ngừa chuẩn.
 *A.Đúng
 B.Sai
