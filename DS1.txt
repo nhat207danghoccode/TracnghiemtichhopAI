@@ -200,7 +200,7 @@ B.Sai
 68.Trên túi bảo quản dụng cụ không chịu nhiệt phải rõ ngày tiệt khuẩn, hạn sử dụng.
 *A.Đúng
 B.Sai
-69.Giáo dục hoặc tên người thực hành và chăm sóc cũng như biện pháp phòng ngừa kiểm soát lây nhiễm và giám sát phát hiện các nhiễm khuẩn bệnh viện là giải pháp chính của phòng ngừa chuẩn.
+69.Giáo dục về kiến thức,  thực hành và chăm sóc cũng như biện pháp phòng ngừa kiểm soát lây nhiễm và giám sát phát hiện các nhiễm khuẩn bệnh viện là giải pháp chính của phòng ngừa chuẩn.
 A.Đúng
 *B.Sai
 70.Những tác nhân cộng sinh từ người thường là các vi khuẩn thường trú trong tất cả những người hiện diện trong bệnh viện, đặc biệt ở những người nằm lâu.
