@@ -771,11 +771,11 @@ A. không được xoa bóp vùng tiêm
 C. nghỉ ngơi tại giường ít nhất 30 phút
 D. kỹ thuật tiêm sẽ rất đau
 
-353. Vị trí tiêm mông là
+353. Vị trí tiêm bắp nông là
 A. 1/3 trên mặt trước trong cánh tay
 B. vùng quanh rốn
 C. Cơ mông
-D. Cơ đen ta và cơ tứ đầu đùi
+*D. Cơ đen ta và cơ tứ đầu đùi
 
 354. Góc độ đâm kim của tiêm mông là
 A. Đâm kim với góc 45,0 đến 60,0 so với mặt da
