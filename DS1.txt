@@ -117,8 +117,8 @@ B.Sai
 *A.Đúng
 B.Sai
 41.Giám sát tại khoa sơ sinh là một trong những phương pháp giám sát tỉ lệ bệnh mắc mới.
-A.Đúng
-*B.Sai
+*A.Đúng
+B.Sai
 42.Tiệt khuẩn là quá trình tiêu diệt tất cả các loại vi sinh vật kể cả bào tử của vi khuẩn.
 *A.Đúng
 B.Sai
