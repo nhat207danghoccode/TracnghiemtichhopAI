@@ -778,10 +778,10 @@ C. Cơ mông
 *D. Cơ đen ta và cơ tứ đầu đùi
 
 354. Góc độ đâm kim của tiêm mông là
-A. Đâm kim với góc 45,0 đến 60,0 so với mặt da
-*B. Đâm kim với góc 90,0 so với mặt da
+A. Đâm kim với góc 45° đến 60° so với mặt da
+*B. Đâm kim với góc 90° so với mặt da
 C. Đâm kim vuông góc với bề mặt véo
-D. Đâm kim với góc 60,0 đến 90,0 so với mặt da
+D. Đâm kim với góc 60° đến 90° so với mặt da
 
 355. Chống Chỉ định của tiêm bắp là
 A. Cho tất cả các loại thuốc tiêm được vào mô liên kết dưới da
@@ -928,10 +928,10 @@ C. cho dịch chảy chậm
 D. dùng nẹp cố định vùng truyền ở tất cả bệnh nhân
 
 379. Khi thực hiện test lấy da, bơm kim tiêm cần phải tạo với mặt da một góc
-A. 150
-B. 300
-*C. 450
-D. 600
+*A. 15°
+B. 30°
+C. 45°
+D. 60°
 
 380. Đối với vết thương có khâu bị nhiễm trùng, khi thay băng của vết thương phải
 A. Rửa vết thương
