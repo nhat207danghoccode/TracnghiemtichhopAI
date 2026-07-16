@@ -1160,7 +1160,7 @@ B. Ống thông nalaton
 *C. Ống thông Foley 3 nhánh
 D. Ống thông sắt
 
-417. Khi do dấu hiệu sinh tồn của người bệnh, nếu phát hiện thường điều dưỡng phải
+417. Khi do dấu hiệu sinh tồn của người bệnh, nếu phát hiện bất thường điều dưỡng phải
 A. Báo cho người nhà người bệnh
 B. Ghi vào sổ theo dõi 
 C. Chờ 30 phút sau và đo lại
