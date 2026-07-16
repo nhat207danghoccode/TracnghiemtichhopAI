@@ -966,8 +966,8 @@ B. Sai
 B. Sai
 
 26. Bộ phận giám sát nhiễm khuẩn phải đảm bảo tối thiểu cứ 150 giường bệnh có 02 nhân lực chuyên trách giám sát nhiễm khuẩn được đào tạo về KSNK.
-*A. Đúng
-B. Sai
+A. Đúng
+*B. Sai
 
 27. Do chưa tuân thủ các quy định phòng ngừa nhiễm khuẩn của nhân viên y tế (vệ sinh tay kém, sử dụng chung găng tay...) có thể làm tăng nguy cơ nhiễm khuẩn bệnh viện.
 *A. Đúng
