@@ -29,13 +29,13 @@ D. Đau bụng, nôn và tiêu chảy
 
 230. Nhiễm khuẩn bệnh viện tỷ lệ mắc thấp nhất trong các loại nhiễm khuẩn bệnh viện.
 A. Nhiễm khuẩn đường tiết niệu
-B. Nhiễm khuẩn huyết
-*C. Nhiễm khuẩn qua đường da
+*B. Nhiễm khuẩn huyết
+C. Nhiễm khuẩn qua đường da
 D. Nhiễm khuẩn vết mổ
 
 231. Tỷ lệ tử vong thấp nhất trong các loại nhiễm khuẩn bệnh viện thường gặp.
-A. Nhiễm khuẩn đường tiết niệu
-*B. Nhiễm khuẩn vết bỏng
+*A. Nhiễm khuẩn đường tiết niệu
+B. Nhiễm khuẩn vết bỏng
 C. Nhiễm khuẩn phổi bệnh viện
 D. Nhiễm khuẩn vết mổ
 
