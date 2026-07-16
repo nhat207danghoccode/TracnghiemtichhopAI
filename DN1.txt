@@ -893,9 +893,9 @@ D. Đếm mạch
 
 373. Chỉ áp dụng truyền máu khác nhóm trong trường hợp nào sau đây
 A. Truyền thay máu
-*B. Không dung nạp các thành phần huyết tương hoặc bạch cầu
+B. Không dung nạp các thành phần huyết tương hoặc bạch cầu
 C. Suy tim
-D. Trường hợp cấp cứu không có cùng nhóm máu
+*D. Trường hợp cấp cứu không có cùng nhóm máu
 
 374. Nguyên tắc truyền dịch là
 A. không lưu kim quá 48 giờ trừ trường hợp sử dụng kim luồn
