@@ -241,9 +241,9 @@ D. Giám sát có trọng điểm
 
 265. Phương pháp nào là phương pháp chính xác nhất, là tiêu chuẩn vàng nhưng đòi hỏi nhiều nhân lực?
 A. Giám sát dựa vào thể chăm sóc
-*B. Giám sát dựa vào danh sách bệnh nhân sử dụng kháng sinh
+B. Giám sát dựa vào danh sách bệnh nhân sử dụng kháng sinh
 C. Giám sát dựa vào kết quả phân lập vi khuẩn
-D. Nghiên cứu tiến cứu
+*D. Nghiên cứu tiến cứu
 
 
 
