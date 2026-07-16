@@ -1507,8 +1507,8 @@ D. Theo dõi sắt mặt người bệnh trong khi tiêm thuốc
 474. Nguyên tắc chung khi cho người bệnh dùng thuốc, chọn câu SAI
      A. Phải đảm bảo an toàn, hợp lý và hiệu quả cho người dùng thuốc 
      B. Phải đảm bảo thuốc đến cơ thể người bệnh 
-     C. Phải tập trung tư tưởng cho việc dùng thuốc, sao chép y lệnh chính xác
-     *D. Thực hiện 5 đúng
+    * C. Phải tập trung tư tưởng cho việc dùng thuốc, sao chép y lệnh chính xác
+     D. Thực hiện 5 đúng
 
 
 475. Những yêu cầu cần thiết khi cho người bệnh dùng thuốc chọn câu SAI
