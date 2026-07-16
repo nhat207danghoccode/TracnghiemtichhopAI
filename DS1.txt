@@ -192,8 +192,8 @@ A.Đúng
 *A.Đúng
 B.Sai
 66.Dụng cụ chịu nhiệt nếu bảo quản quá thời gian quy định phải đưa dụng cụ làm lại từ bước làm sạch.
-A.Đúng
-*B.Sai
+*A.Đúng
+B.Sai
 67.Nhân viên xử lý dụng cụ phải rửa tay đi găng trước khi xử lý dụng cụ.
 *A.Đúng
 B.Sai
