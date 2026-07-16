@@ -106,7 +106,7 @@ A.Đúng
 37.Có nhiều cách thức để phân loại giám sát NKBV, tùy thuộc mục tiêu kiểm soát bệnh viện và năng lực thực tế của đội ngũ cán bộ KSNK, cơ sở vật chất phục vụ cho giám sát để lựa chọn phương pháp giám sát thích hợp.
 *A.Đúng
 B.Sai
-38.Báo hình giám sát theo trung tâm kiểm soát bệnh tật Hoa Kỳ là một hệ thống giám sát.
+38.Mô hình giám sát theo trung tâm kiểm soát bệnh tật Hoa Kỳ là một hệ thống giám sát.
 *A.Đúng
 B.Sai
 39.Giám sát vào kết quả phân lập vi khuẩn là một trong những hệ thống giám sát theo trung tâm kiểm soát bệnh tật Hoa Kỳ.
