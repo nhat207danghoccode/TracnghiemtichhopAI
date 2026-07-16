@@ -706,10 +706,10 @@ A. 15 mmHg
 C. 25 mmHg
 D. 30 mmHg
 342. Trước khi đo nhiệt độ, điều dưỡng phải kiểm tra nhiệt kế và vẩy về dưới
-A. 150C
-B. 200C
-C. 250C
-*D. 350C
+A. 15ºC
+B. 20ºC
+C. 25ºC
+*D. 35ºC
 
 343. Vị trí nào sau đây được sử dụng để đo huyết áp
 *A. Cánh tay và đùi
