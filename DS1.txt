@@ -723,9 +723,9 @@ B. Sai
 215. Chức năng của người điều dưỡng là chức năng chủ động phát hiện, chăm sóc đáp ứng các nhu cầu cơ bản và chức năng phối hợp trong chăm sóc cùng bác sĩ và các chỉ định điều trị.
 *A. Đúng
 B. Sai
-216. Mục tiêu y tế quốc gia là tăng cường dịch vụ Điều dưỡng chăm sóc tại nhà.
-A. Đúng
-*B. Sai
+216. Thực hiên mục tiêu y tế quốc gia là tăng cường dịch vụ Điều dưỡng chăm sóc tại nhà.
+*A. Đúng
+B. Sai
 217. Sức khỏe là sự thoải mái hoàn toàn về thể chất, tinh thần và xã hội. Nó không chỉ là tình trạng không có bệnh tật.
 *A. Đúng
 B. Sai
@@ -745,8 +745,8 @@ B. Sai
 *A. Đúng
 B. Sai
 223. Đối với người bệnh nặng nguy kịch phải chăm sóc theo y lệnh và kịp thời phát hiện những diễn biến bất thường để ghi vào hồ sơ người bệnh.
-A. Đúng
-*B. Sai
+*A. Đúng
+B. Sai
 224. Bảo quản tài sản, thuốc, dụng cụ y tế, trật tự và vệ sinh buồng bệnh là nhiệm vụ của hộ lý.
 *A. Đúng
 B. Sai
