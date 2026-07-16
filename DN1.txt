@@ -1197,7 +1197,7 @@ B. Khi tim giãn ra áp lực trong động mạch lên tới mức cao nhất g
 C. Khi tim co lại lực xuống tới mức thấp nhất gọi là huyết áp tối thiểu hay là huyết áp tâm trương 
 D. Huyết áp là lực của máu lên thành tĩnh mạch
 
-423. Trước khi đo dấu hiệu sinh tồn cho người bệnh, điều dưỡng viễn phi
+423. Trước khi đo dấu hiệu sinh tồn cho người bệnh, điều dưỡng viên phải
 *A. Cho người bệnh nằm nghỉ ngơi 10 – 15 phút
 B. Khi đếm nhịp thở phải thông báo cho người bệnh biết
 C. Giải thích cụ thể các bước kỹ thuật cho người bệnh biết
@@ -1207,7 +1207,7 @@ D. Khi có bất thường phải ghi vào sổ theo dõi
 A. Chi trên: Cơ đen ta, cơ tam đầu cánh tay
 B. Chi dưới: Cơ tứ đầu đùi (mặt trước, ngoài)
 C. Vùng da bụng
-D. Vùng mặt trước ngoài cẳng tay
+*D. Vùng mặt trước ngoài cẳng tay
 
 425. Để hạn chế nguy cơ tắc mạch khi tiêm tĩnh mạch, điều dưỡng cần
 *A. Đuổi hết không khí ra khỏi bơm tiêm
