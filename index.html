@@ -226,35 +226,56 @@ margin-bottom:30px;
 Vui lòng chọn môn học
 </p>
 
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+
 <button
 class="btn"
-style="
-width:100%;
-margin-bottom:15px;
-font-size:18px;
-padding:16px;
-"
+style="width:100%;padding:16px;font-size:18px;"
 onclick="chooseSubject('GPSL')">
-
-📘 Môn GPSL
-
+📘 GPSL
 </button>
 
 <button
 class="btn"
-style="
-width:100%;
-font-size:18px;
-padding:16px;
-background:#16a34a;
-"
+style="width:100%;padding:16px;font-size:18px;background:#16a34a;"
 onclick="chooseSubject('DDCS')">
-
-📗 Môn ĐDCS
-
+📗 ĐDCS
 </button>
 
-</div>
+<button
+class="btn"
+style="width:100%;padding:16px;font-size:18px;background:#dc2626;"
+onclick="chooseSubject('GP')">
+🫀 Giải phẫu
+</button>
+
+<button
+class="btn"
+style="width:100%;padding:16px;font-size:18px;background:#7c3aed;"
+onclick="chooseSubject('SL')">
+🧠 Sinh lý
+</button>
+
+<button
+class="btn"
+style="width:100%;padding:16px;font-size:18px;background:#ea580c;"
+onclick="chooseSubject('HS')">
+🧪 Hóa sinh
+</button>
+
+<button
+class="btn"
+style="width:100%;padding:16px;font-size:18px;background:#0891b2;"
+onclick="chooseSubject('DL')">
+💊 Dược lý
+</button>
+
+<button
+class="btn"
+style="grid-column:1/3;padding:16px;font-size:18px;background:#0f766e;"
+onclick="chooseSubject('DD')">
+🏥 Điều dưỡng
+</button>
 
 </div>
 
@@ -366,13 +387,7 @@ document.getElementById(
     Câu Hỏi Đúng Sai
 </button>
 
-<button class="btn gray" id="tabKT" onclick="switchTab('KT')">
-📖 Bài Kiểm Tra Thế Kỉ Trước
-</button>
 
-<button class="btn gray" id="tabKSNK" onclick="switchTab('KSNK')">
-🦠 Phần Kiểm Soát Nhiễm Khuẩn
-</button>
 
 <button class="btn gray" id="tabNOTE" onclick="switchTab('NOTE')">
     📒 Ghi Chú
@@ -867,58 +882,59 @@ async function checkDevice(){
 checkDevice();
 
 
-let currentSubject = "";
+let currentSubject =
+localStorage.getItem("currentSubject") || "";
 
 const SUBJECTS = {
-    GPSL:{
-        name:"GPSL",
-        dn:"GPSL_DN.txt",
-        ds:"GPSL_DS.txt"
-    },
 
-    DDCS:{
-        name:"ĐDCS",
-        dn:"DDCS_DN.txt",
-        ds:"DDCS_DS.txt"
-    },
+GPSL:{
+    name:"GPSL",
+    dn:"GPSL_DN.txt",
+    ds:"GPSL_DS.txt"
+},
 
-    GIAIPHAU:{
-        name:"Giải phẫu",
-        dn:"GP_DN.txt",
-        ds:"GP_DS.txt"
-    },
+DDCS:{
+    name:"ĐDCS",
+    dn:"DDCS_DN.txt",
+    ds:"DDCS_DS.txt"
+},
 
-    SINHLY:{
-        name:"Sinh lý",
-        dn:"SL_DN.txt",
-        ds:"SL_DS.txt"
-    },
+GP:{
+    name:"Giải phẫu",
+    dn:"GP_DN.txt",
+    ds:"GP_DS.txt"
+},
 
-    HOASINH:{
-        name:"Hóa sinh",
-        dn:"HS_DN.txt",
-        ds:"HS_DS.txt"
-    },
+SL:{
+    name:"Sinh lý",
+    dn:"SL_DN.txt",
+    ds:"SL_DS.txt"
+},
 
-    DUOCLY:{
-        name:"Dược lý",
-        dn:"DL_DN.txt",
-        ds:"DL_DS.txt"
-    },
+HS:{
+    name:"Hóa sinh",
+    dn:"HS_DN.txt",
+    ds:"HS_DS.txt"
+},
 
-    DIEUDUONG:{
-        name:"Điều dưỡng",
-        dn:"DD_DN.txt",
-        ds:"DD_DS.txt"
-    }
+DL:{
+    name:"Dược lý",
+    dn:"DL_DN.txt",
+    ds:"DL_DS.txt"
+},
+
+DD:{
+    name:"Điều dưỡng",
+    dn:"DD_DN.txt",
+    ds:"DD_DS.txt"
 }
 
+};
 
     
 let parsedQuestionsDN = [];
 let parsedQuestionsDS = [];
-let parsedQuestionsKT = [];
-let parsedQuestionsKSNK = [];
+
 let examQuestions = [];
 let examSeconds = 2700;
 
@@ -965,17 +981,7 @@ function toggleMusic(){
 function chooseSubject(subject){
 
 currentSubject = subject;
-if(subject=="DDCS"){
 
-document.getElementById("tabKT").style.display="inline-block";
-document.getElementById("tabKSNK").style.display="inline-block";
-
-}else{
-
-document.getElementById("tabKT").style.display="none";
-document.getElementById("tabKSNK").style.display="none";
-
-}
 
 localStorage.setItem(
 "currentSubject",
@@ -1009,18 +1015,11 @@ async function loadQuestionFiles(){
 
 const ds = await fetch(subject.ds).then(r=>r.text());
 
-parsedQuestionsKT = [];
-parsedQuestionsKSNK = [];
+
 
 if(currentSubject=="DDCS"){
 
-const kt = await fetch("KT.txt").then(r=>r.text());
 
-const ksnk = await fetch("KSNK.txt").then(r=>r.text());
-
-parsedQuestionsKT = parseRawText(kt);
-
-parsedQuestionsKSNK = parseRawText(ksnk);
 
 }
 parsedQuestionsDN = parseRawText(dn);
@@ -1113,15 +1112,13 @@ document.getElementById("tabDN").classList.remove("activeTab");
 document.getElementById("tabDS").classList.remove("activeTab");
 document.getElementById("tabNOTE").classList.remove("activeTab");
 document.getElementById("tabEXAM").classList.remove("activeTab");
-document.getElementById("tabKT").classList.remove("activeTab");
-document.getElementById("tabKSNK").classList.remove("activeTab");
+
 
 document.getElementById("tabDN").classList.add("gray");
 document.getElementById("tabDS").classList.add("gray");
 document.getElementById("tabNOTE").classList.add("gray");
 document.getElementById("tabEXAM").classList.add("gray");
-document.getElementById("tabKT").classList.add("gray");
-document.getElementById("tabKSNK").classList.add("gray");
+
     
 document.getElementById("tab"+type).classList.add("activeTab");
 document.getElementById("tab"+type).classList.remove("gray");
@@ -1303,17 +1300,7 @@ questions=[...parsedQuestionsDS];
 
 }
 
-else if(currentTab==="KT"){
 
-questions=[...parsedQuestionsKT];
-
-}
-
-else if(currentTab==="KSNK"){
-
-questions=[...parsedQuestionsKSNK];
-
-}
 
 else if(currentTab==="EXAM"){
 
@@ -2019,31 +2006,21 @@ JSON.stringify(bookmarks)
 updateNavColors()
 }
     
-window.onload=function(){
+window.onload = function () {
 
-    const savedSubject =
-    localStorage.getItem("currentSubject");
+    const savedSubject = localStorage.getItem("currentSubject");
 
-    if(savedSubject){
+    if (savedSubject && SUBJECTS[savedSubject]) {
 
         currentSubject = savedSubject;
-if(savedSubject=="DDCS"){
 
-document.getElementById("tabKT").style.display="inline-block";
-document.getElementById("tabKSNK").style.display="inline-block";
-
-}else{
-
-document.getElementById("tabKT").style.display="none";
-document.getElementById("tabKSNK").style.display="none";
-
-}
-
-        document.getElementById(
-        "subjectSelect"
-        ).style.display="none";
+        document.getElementById("subjectSelect").style.display = "none";
 
         loadQuestionFiles();
+
+    } else {
+
+        document.getElementById("subjectSelect").style.display = "flex";
 
     }
 
