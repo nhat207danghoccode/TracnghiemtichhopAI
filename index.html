@@ -226,32 +226,32 @@ margin-bottom:30px;
 Vui lòng chọn môn học
 </p>
 
-<button
-class="btn"
-style="
-width:100%;
-margin-bottom:15px;
-font-size:18px;
-padding:16px;
-"
-onclick="chooseSubject('GPSL')">
-
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;" onclick="chooseSubject('GPSL')">
 📘 Môn GPSL
-
 </button>
 
-<button
-class="btn"
-style="
-width:100%;
-font-size:18px;
-padding:16px;
-background:#16a34a;
-"
-onclick="chooseSubject('DDCS')">
-
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;background:#16a34a;" onclick="chooseSubject('DDCS')">
 📗 Môn ĐDCS
+</button>
 
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;background:#2563eb;" onclick="chooseSubject('NOI')">
+💙 Điều dưỡng Nội
+</button>
+
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;background:#ef4444;" onclick="chooseSubject('NGOAI')">
+❤️ Điều dưỡng Ngoại
+</button>
+
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;background:#f59e0b;" onclick="chooseSubject('NHI')">
+👶 Điều dưỡng Nhi
+</button>
+
+<button class="btn" style="width:100%;margin-bottom:12px;font-size:18px;padding:16px;background:#ec4899;" onclick="chooseSubject('SAN')">
+🤰 Điều dưỡng Sản
+</button>
+
+<button class="btn" style="width:100%;font-size:18px;padding:16px;background:#06b6d4;" onclick="chooseSubject('KSNK')">
+🦠 Kiểm soát nhiễm khuẩn
 </button>
 
 </div>
@@ -866,27 +866,48 @@ let currentSubject = "";
 const SUBJECTS = {
 
 GPSL:{
-
-name:"GPSL",
-
-dn:"DN.txt",
-
-ds:"DS.txt"
-
+    name:"GPSL",
+    dn:"DN.txt",
+    ds:"DS.txt"
 },
 
 DDCS:{
+    name:"ĐDCS",
+    dn:"DN1.txt",
+    ds:"DS1.txt"
+},
 
-name:"ĐDCS",
+NOI:{
+    name:"Điều dưỡng Nội",
+    dn:"DN2.txt",
+    ds:"DS2.txt"
+},
 
-dn:"DN1.txt",
+NGOAI:{
+    name:"Điều dưỡng Ngoại",
+    dn:"DN3.txt",
+    ds:"DS3.txt"
+},
 
-ds:"DS1.txt"
+NHI:{
+    name:"Điều dưỡng Nhi",
+    dn:"DN4.txt",
+    ds:"DS4.txt"
+},
 
+SAN:{
+    name:"Điều dưỡng Sản",
+    dn:"DN5.txt",
+    ds:"DS5.txt"
+},
+
+KSNK:{
+    name:"Kiểm soát nhiễm khuẩn",
+    dn:"DN6.txt",
+    ds:"DS6.txt"
 }
 
 };
-
 
     
 let parsedQuestionsDN = [];
