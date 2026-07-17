@@ -2,15 +2,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Trắc Nghiệm By Nhật Auto Update - @Nhat2007</title>
 
@@ -31,9 +24,11 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-
-font-family:'Be Vietnam Pro',sans-serif;
-
+    font-family:Arial,sans-serif;
+    background:url('suy.JPG') center center / cover no-repeat fixed;
+    padding:20px;
+    color:#222;
+    overflow-x:hidden;
 }
 
 #bgVideo{
@@ -53,21 +48,18 @@ font-family:'Be Vietnam Pro',sans-serif;
 }
 
 .header{
-
-background:rgba(255,255,255,.78);
-
-backdrop-filter:blur(25px);
-
-border-radius:32px;
-
-padding:40px;
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(5px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+    margin-bottom:20px;
 }
 
 .header h1{
-    font-size:38px;
-    font-weight:800;
-    color:#111827;
+    font-size:32px;
+    color:var(--dark);
     margin-bottom:10px;
 }
 
@@ -86,21 +78,13 @@ padding:40px;
 }
 
 .stats{
-
-background:linear-gradient(
-135deg,
-#ffffff,
-#eef2ff
-);
-
-border-radius:22px;
-
-padding:18px 28px;
-
-font-weight:700;
-
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(5px);
+    padding:15px 20px;
+    border-radius:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+    font-weight:bold;
+    font-size:16px;
 }
 
 .buttons{
@@ -110,29 +94,20 @@ box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
 .btn{
-
-background:
-
-linear-gradient(135deg,#4f46e5,#6366f1);
-
-border-radius:18px;
-
-padding:14px 22px;
-
-font-weight:700;
-
-box-shadow:
-
-0 10px 25px rgba(79,70,229,.35);
-
-transition:.25s;
-
+    border:none;
+    background:var(--main);
+    color:white;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    transition:.2s;
 }
 
 .btn:hover{
-
-transform:translateY(-3px) scale(1.02);
-
+    background:var(--main-dark);
+    transform:translateY(-2px);
 }
 
 .btn.gray{
@@ -148,33 +123,12 @@ transform:translateY(-3px) scale(1.02);
 }
 
 .question{
-
-background:rgba(255,255,255,.82);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.3);
-
-border-radius:26px;
-
-padding:26px;
-
-box-shadow:
-
-0 20px 45px rgba(0,0,0,.12);
-
-transition:.3s;
-
-}
-
-.question:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-
-0 30px 60px rgba(0,0,0,.2);
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(5px);
+    padding:22px;
+    border-radius:18px;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
 }
 
 .question-title{
@@ -185,22 +139,6 @@ box-shadow:
     line-height:1.5;
 }
 
-.question-title span{
-
-transition:.25s;
-
-color:#94a3b8;
-
-}
-
-.question-title span:hover{
-
-color:#3b82f6;
-
-transform:scale(1.2);
-
-}
-
 .options{
     display:flex;
     flex-direction:column;
@@ -208,19 +146,19 @@ transform:scale(1.2);
 }
 
 .option{
-
-border-radius:18px;
-
-padding:18px;
-
-transition:.25s;
-
+    border:2px solid #e5e7eb;
+    border-radius:12px;
+    padding:14px;
+    cursor:pointer;
+    transition:.2s;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:white;
 }
 
 .option:hover{
-
-transform:translateX(6px);
-
+    background:#f8fafc;
 }
 
 .option.correct{
@@ -2682,23 +2620,13 @@ height:370px;
 }
 
 .navBtn{
-
-width:46px;
-
-height:46px;
-
+height:42px;
 border:none;
-
-border-radius:50%;
-
-background:#e2e8f0;
-
+border-radius:10px;
+background:#e5e7eb;
 font-weight:bold;
-
-transition:.25s;
-
 cursor:pointer;
-
+transition:.2s;
 }
 
 .navBtn.todo{
@@ -2727,9 +2655,7 @@ box-shadow:0 0 0 3px #2563eb inset;
 
 .navBtn:hover{
 
-transform:scale(1.12);
-
-background:#4f46e5;
+background:#2563eb;
 
 color:white;
 
@@ -2750,19 +2676,20 @@ animation:fade .25s;
 
 .popup-box{
 
-width:360px;
+width:330px;
 max-width:92%;
 
-background:rgba(255,255,255,.9);
+background:#fff;
 
-backdrop-filter:blur(25px);
+border-radius:24px;
 
-border-radius:30px;
+padding:28px;
 
-padding:30px;
+text-align:center;
 
-box-shadow:0 25px 60px rgba(0,0,0,.2);
+box-shadow:0 20px 50px rgba(0,0,0,.25);
 
+animation:popupShow .25s;
 }
 
 .popup-icon{
